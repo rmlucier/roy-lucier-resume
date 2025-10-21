@@ -150,31 +150,109 @@
             letter-spacing: 0.05em;
         }
 
-        /* Skill progress - subtle and minimal */
+        /* Tabs styling inspired by shadcn */
+        .tabs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .tabs-list {
+            display: inline-flex;
+            height: 2.25rem;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .tabs-trigger {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.375rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #64748b;
+        }
+
+        .tabs-trigger.active {
+            background: white;
+            color: #0f172a;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .tabs-trigger:hover:not(.active) {
+            color: #334155;
+        }
+
+        .tabs-content {
+            display: none;
+            flex: 1;
+            outline: none;
+        }
+
+        .tabs-content.active {
+            display: block;
+        }
+
+        /* Progress bars inspired by shadcn */
         .skill-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f3f4f6;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f5f9;
         }
 
         .skill-item:last-child {
             border-bottom: none;
         }
 
-        .skill-bar-container {
-            width: 60px;
-            height: 4px;
-            background: #f3f4f6;
-            border-radius: 2px;
+        .skill-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-right: 1rem;
         }
 
-        .skill-bar {
+        .skill-name {
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-score {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .progress-container {
+            position: relative;
+            height: 0.5rem;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 9999px;
+            background: rgba(242, 81, 27, 0.2);
+            margin-top: 0.5rem;
+        }
+
+        .progress-indicator {
             height: 100%;
-            background: linear-gradient(90deg, #e5e7eb 0%, #9ca3af 100%);
-            border-radius: 2px;
-            transition: all 0.3s ease;
+            width: 100%;
+            flex: 1;
+            background: #f2511b;
+            transition: all 0.5s ease;
+            border-radius: 9999px;
         }
 
         /* Experience cards */
@@ -412,76 +490,122 @@
         <div class="container">
             <h2 class="subtitle text-center mb-12">Core Competencies</h2>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Operational Excellence -->
-                <div class="card-minimal">
-                    <h3 class="heading-1">Operational & Administrative Excellence</h3>
-                    <div class="space-y-2">
-                        <div class="skill-item">
-                            <span class="heading-2">Complex Calendar & Schedule Management</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 95%"></div>
+            <div class="tabs-container">
+                <!-- Tabs Navigation -->
+                <div class="tabs-list">
+                    <button class="tabs-trigger active" onclick="switchTab('operational')" id="operational-tab">
+                        <i data-lucide="settings" class="w-4 h-4 mr-2"></i>
+                        Operational Excellence
+                    </button>
+                    <button class="tabs-trigger" onclick="switchTab('strategic')" id="strategic-tab">
+                        <i data-lucide="target" class="w-4 h-4 mr-2"></i>
+                        Strategic & Coaching
+                    </button>
+                </div>
+
+                <!-- Operational Excellence Tab -->
+                <div class="tabs-content active" id="operational-content">
+                    <div class="card-minimal">
+                        <h3 class="heading-1 mb-6">Operational & Administrative Excellence</h3>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Complex Calendar & Schedule Management</div>
+                                    <div class="skill-score">10/10 - Expert Level</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-0%)"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="heading-2">Project Coordination & Tracking</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 90%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Project Coordination & Tracking</div>
+                                    <div class="skill-score">8.1/10 - Advanced</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-19%)"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="heading-2">Internal & External Communications</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 95%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Internal & External Communications</div>
+                                    <div class="skill-score">9.3/10 - Expert</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-7%)"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="heading-2">Meeting Preparation & Facilitation</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 90%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Meeting Preparation & Facilitation</div>
+                                    <div class="skill-score">9.0/10 - Expert</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-10%)"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="heading-2">Confidentiality and Integrity</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 98%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Confidentiality and Integrity</div>
+                                    <div class="skill-score">10/10 - Expert Level</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-0%)"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Strategic Capabilities -->
-                <div class="card-minimal">
-                    <h3 class="heading-1">Strategic & Coaching Capabilities</h3>
-                    <div class="space-y-2">
-                        <div class="skill-item">
-                            <span class="heading-2">Executive & Leadership Coaching (ACC)</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 90%"></div>
+                <!-- Strategic & Coaching Tab -->
+                <div class="tabs-content" id="strategic-content">
+                    <div class="card-minimal">
+                        <h3 class="heading-1 mb-6">Strategic & Coaching Capabilities</h3>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Executive & Leadership Coaching (ACC)</div>
+                                    <div class="skill-score">8.6/10 - ICF Certified</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-14%)"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="heading-2">Stakeholder & Relationship Management</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 95%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Stakeholder & Relationship Management</div>
+                                    <div class="skill-score">9.2/10 - Expert</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-8%)"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="heading-2">Culture Carrier / Change Agent</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 92%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Culture Carrier / Change Agent</div>
+                                    <div class="skill-score">8.8/10 - Advanced</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-12%)"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="heading-2">Strategic Planning & Execution</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 88%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Strategic Planning & Execution</div>
+                                    <div class="skill-score">7.0/10 - Proficient</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-30%)"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="heading-2">Cross-Functional Coordination</span>
-                            <div class="skill-bar-container">
-                                <div class="skill-bar" style="width: 93%"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Cross-Functional Coordination</div>
+                                    <div class="skill-score">8.5/10 - Advanced</div>
+                                    <div class="progress-container">
+                                        <div class="progress-indicator" style="transform: translateX(-15%)"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -877,6 +1001,21 @@
                 details.classList.add('hidden');
                 icon.style.transform = 'rotate(0deg)';
             }
+        }
+
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Remove active class from all triggers and contents
+            document.querySelectorAll('.tabs-trigger').forEach(trigger => {
+                trigger.classList.remove('active');
+            });
+            document.querySelectorAll('.tabs-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Add active class to selected trigger and content
+            document.getElementById(tabName + '-tab').classList.add('active');
+            document.getElementById(tabName + '-content').classList.add('active');
         }
 
         // Initialize charts with minimal styling
