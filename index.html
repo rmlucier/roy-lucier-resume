@@ -347,6 +347,123 @@
             color: white;
         }
 
+        /* Story blocks styling */
+        .story-block {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-block:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #f2511b;
+        }
+
+        .story-block.expanded {
+            transform: none;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-color: #f2511b;
+        }
+
+        .story-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .story-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #f2511b, #e04915);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .story-title {
+            font-family: 'Railway', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.3;
+            flex: 1;
+        }
+
+        .story-expand-icon {
+            color: #6b7280;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .story-block.expanded .story-expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .story-preview {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .story-block.expanded .story-content {
+            max-height: 2000px;
+        }
+
+        .story-text {
+            color: #374151;
+            font-size: 15px;
+            line-height: 1.7;
+            padding-top: 1rem;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .story-text h4 {
+            font-family: 'Railway', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #f2511b;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .story-text p {
+            margin-bottom: 1rem;
+        }
+
+        .story-text strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .story-result {
+            background: linear-gradient(135deg, #f2511b, #e04915);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .story-result h4 {
+            color: white !important;
+            margin-top: 0 !important;
+        }
+
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
@@ -617,6 +734,99 @@
                 <h3 class="heading-1 text-center mb-8">Competency Overview</h3>
                 <div class="skills-chart">
                     <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUCCESS STORIES -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="subtitle text-center mb-12">Success Stories</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Real examples of how I've multiplied executive effectiveness and transformed organizational outcomes
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
+                <!-- Story Block 1 -->
+                <div class="story-block" onclick="toggleStory('story1')" id="story1">
+                    <div class="story-header">
+                        <div class="story-icon">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="story-title">
+                            The Story of a Failing Project (And Why a Partner is More Than an Assistant)
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 story-expand-icon"></i>
+                    </div>
+
+                    <div class="story-preview">
+                        How I transformed a chaotic $200K initiative from burning through executive time to running smoothly with just 15 minutes of CEO attention per week...
+                    </div>
+
+                    <div class="story-content">
+                        <div class="story-text">
+                            <p>A few years ago, in my role as a "second chair leader" at an 800-person organization, our CEO was facing a common and incredibly frustrating problem.</p>
+
+                            <p>He had launched a critical, high-visibility new community initiative—a big bet for our future. The person he put in charge was brilliant and passionate, but they were a visionary, not an operator. Within two months, the project was in chaos. Deadlines were being missed, the budget was a mess, and the team was burning out. The CEO was spending over five hours a week in emergency meetings, getting dragged into the weeds and pulled away from his real job: leading the company.</p>
+
+                            <p><strong>He was drowning in the details of his own vision.</strong></p>
+
+                            <p>This is the point where most leaders would hire an assistant. They would say, "Help me schedule more follow-up meetings," or "Organize this person's calendar." That's managing the chaos.</p>
+
+                            <p>But the CEO came to me and said, <strong>"I need you to solve this."</strong></p>
+
+                            <p>That's the difference between an assistant and a partner.</p>
+
+                            <h4>The Diagnosis (The Coach)</h4>
+                            <p>My first step wasn't to look at the project plan; it was to have a confidential one-on-one with the struggling project leader. Using a coach approach, I didn't criticize; I listened. I learned that they felt overwhelmed, didn't know how to delegate, and were afraid to admit they were failing.</p>
+
+                            <h4>The Architecture (The Operator)</h4>
+                            <p>Instead of taking over, I built a lightweight system to support them. I introduced Asana to create a simple, visual project plan. I created a one-page budget tracker in a Google Sheet. And I established a single, 15-minute "traffic light" check-in meeting every Friday with the CEO, the project leader, and myself—green for on-track, yellow for risks, red for roadblocks.</p>
+
+                            <h4>The Enablement (The Partner)</h4>
+                            <p>I acted as the bridge. I coached the project leader on how to run that 15-minute meeting effectively. I protected the CEO's time by ensuring that only the most critical, "red light" decisions were brought to him. I was the confidential sounding board for both of them, translating the CEO's strategic intent for the project leader and translating the project's real-world progress for the CEO.</p>
+
+                            <div class="story-result">
+                                <h4>The Result</h4>
+                                <p>Within a month, the project was back on track. The project leader, now supported and empowered, went from struggling to thriving.</p>
+                                <p>But the most important metric was the CEO's time. He went from spending <strong>5 hours a week</strong> trying to fix the problem to spending <strong>15 minutes a week</strong> getting a clear, confident update. I didn't just save him time; I gave him back his focus and his peace of mind.</p>
+                                <p><strong>That's the difference between a virtual assistant on the other side of the world and a trusted partner sitting at the table with you. One manages your tasks. The other multiplies your impact.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder for Story Block 2 -->
+                <div class="story-block opacity-50" style="cursor: not-allowed;">
+                    <div class="story-header">
+                        <div class="story-icon">
+                            <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="story-title">
+                            Coming Soon: The 800-Person Culture Transformation
+                        </div>
+                        <i data-lucide="lock" class="w-5 h-5 story-expand-icon"></i>
+                    </div>
+                    <div class="story-preview">
+                        How I enabled a complete organizational restructure while maintaining team morale and productivity...
+                    </div>
+                </div>
+
+                <!-- Placeholder for Story Block 3 -->
+                <div class="story-block opacity-50" style="cursor: not-allowed;">
+                    <div class="story-header">
+                        <div class="story-icon">
+                            <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="story-title">
+                            Coming Soon: The Executive Coaching Breakthrough
+                        </div>
+                        <i data-lucide="lock" class="w-5 h-5 story-expand-icon"></i>
+                    </div>
+                    <div class="story-preview">
+                        How my ICF coaching skills transformed a struggling C-suite leader into their company's top performer...
+                    </div>
                 </div>
             </div>
         </div>
@@ -1016,6 +1226,21 @@
             // Add active class to selected trigger and content
             document.getElementById(tabName + '-tab').classList.add('active');
             document.getElementById(tabName + '-content').classList.add('active');
+        }
+
+        // Story expansion functionality
+        function toggleStory(storyId) {
+            const storyBlock = document.getElementById(storyId);
+
+            // Close all other story blocks
+            document.querySelectorAll('.story-block').forEach(block => {
+                if (block.id !== storyId) {
+                    block.classList.remove('expanded');
+                }
+            });
+
+            // Toggle the clicked story block
+            storyBlock.classList.toggle('expanded');
         }
 
         // Initialize charts with minimal styling
