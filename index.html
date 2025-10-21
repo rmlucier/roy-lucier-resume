@@ -20,12 +20,16 @@
     <style>
         /* Modern clean design with minimal orange accents */
         body {
-            margin: 0 auto;
-            max-width: 1200px;
+            margin: 0;
             font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: #1a1a1a;
             background: #ffffff;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 2rem;
         }
 
@@ -272,7 +276,7 @@
 
         /* Responsive design */
         @media (max-width: 768px) {
-            body {
+            .main-container {
                 padding: 0 1rem;
             }
 
@@ -315,7 +319,7 @@
     </style>
 </head>
 <body>
-
+    <div class="main-container">
     <!-- HERO SECTION -->
     <section class="section">
         <div class="container text-center">
@@ -726,6 +730,7 @@
             </div>
         </div>
     </section>
+    </div>
 
     <script>
         // Initialize Lucide icons
