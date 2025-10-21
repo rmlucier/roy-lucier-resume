@@ -30,7 +30,7 @@ interface FloatingNode {
   position: { x: number; y: number; z: number };
   category: 'personal' | 'experience' | 'skills' | 'contact' | 'achievements';
   connections: string[];
-  data?: Record<string, any>;
+  data?: Record<string, string | number>;
 }
 
 export default function SpatialDesign() {

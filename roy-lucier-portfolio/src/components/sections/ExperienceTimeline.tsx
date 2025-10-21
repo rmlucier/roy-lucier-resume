@@ -7,7 +7,14 @@ import { CalendarDays, MapPin, Users, TrendingUp } from "lucide-react";
 import resumeData from "@/data/resume.json";
 
 interface ExperienceItemProps {
-  experience: any;
+  experience: {
+    position: string;
+    company: string;
+    duration: string;
+    location: string;
+    description: string;
+    achievements: string[];
+  };
   isLast: boolean;
 }
 
