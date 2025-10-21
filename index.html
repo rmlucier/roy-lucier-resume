@@ -362,7 +362,7 @@
             </div>
 
             <!-- Scroll indicator -->
-            <button onclick="scrollToSection('summary')" class="btn-outline">
+            <button onclick="scrollToSection('experience')" class="btn-outline">
                 <span class="mr-2">View Experience</span>
                 <i data-lucide="chevron-down" class="w-4 h-4 inline"></i>
             </button>
@@ -499,7 +499,7 @@
     </section>
 
     <!-- PROFESSIONAL EXPERIENCE -->
-    <section class="section section-alt">
+    <section id="experience" class="section section-alt">
         <div class="container">
             <h2 class="subtitle text-center mb-12">Professional Experience</h2>
 
@@ -715,10 +715,8 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Education -->
                 <div class="card text-center">
-                    <div class="w-20 h-20 mx-auto mb-6 cursor-pointer" onclick="window.open('https://www.northcentral.edu/', '_blank')">
-                        <img src="https://www.northcentral.edu/wp-content/uploads/2023/08/NCU-Logo-Navy.png"
-                             alt="North Central University Logo"
-                             class="w-full h-full object-contain hover:scale-105 transition-transform duration-200">
+                    <div class="w-20 h-20 mx-auto mb-6 cursor-pointer bg-blue-50 rounded-full flex items-center justify-center" onclick="window.open('https://www.northcentral.edu/', '_blank')">
+                        <i data-lucide="graduation-cap" class="w-10 h-10 text-blue-600 hover:scale-105 transition-transform duration-200"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Bachelor of Arts</h3>
                     <p class="text-gray-600 mb-1">Pastoral Studies and Counseling</p>
@@ -732,10 +730,8 @@
 
                 <!-- Certification -->
                 <div class="card text-center">
-                    <div class="w-20 h-20 mx-auto mb-6 cursor-pointer" onclick="window.open('https://www.credly.com/badges/8ec0f5dd-f324-428c-afba-70cdcdf0c5d1/public_url', '_blank')">
-                        <img src="https://images.credly.com/size/340x340/images/08096465-cbfc-4c3e-8fcb-b25be8fcb5a8/ICF-ACC.png"
-                             alt="ICF Associate Certified Coach Badge"
-                             class="w-full h-full object-contain hover:scale-105 transition-transform duration-200">
+                    <div class="w-20 h-20 mx-auto mb-6 cursor-pointer bg-orange-50 rounded-full flex items-center justify-center" onclick="window.open('https://www.credly.com/badges/8ec0f5dd-f324-428c-afba-70cdcdf0c5d1/public_url', '_blank')">
+                        <i data-lucide="award" class="w-10 h-10 text-orange-600 hover:scale-105 transition-transform duration-200"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Associate Certified Coach (ACC)</h3>
                     <p class="text-gray-600 mb-1">International Coach Federation (ICF)</p>
