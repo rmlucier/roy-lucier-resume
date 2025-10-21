@@ -607,125 +607,59 @@
         <div class="container">
             <h2 class="subtitle text-center mb-12">Core Competencies</h2>
 
-            <div class="tabs-container">
-                <!-- Tabs Navigation -->
-                <div class="tabs-list">
-                    <button class="tabs-trigger active" onclick="switchTab('operational')" id="operational-tab">
-                        <i data-lucide="settings" class="w-4 h-4 mr-2"></i>
-                        Operational Excellence
-                    </button>
-                    <button class="tabs-trigger" onclick="switchTab('strategic')" id="strategic-tab">
-                        <i data-lucide="target" class="w-4 h-4 mr-2"></i>
-                        Strategic & Coaching
-                    </button>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Operational Excellence -->
+                <div class="card-minimal">
+                    <h3 class="heading-1">Operational & Administrative Excellence</h3>
+                    <ul class="space-y-3 mt-6">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Complex Calendar & Schedule Management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Project Coordination & Tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Internal & External Communications</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Meeting Preparation & Facilitation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Confidentiality and Integrity</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Operational Excellence Tab -->
-                <div class="tabs-content active" id="operational-content">
-                    <div class="card-minimal">
-                        <h3 class="heading-1 mb-6">Operational & Administrative Excellence</h3>
-                        <div class="space-y-4">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Complex Calendar & Schedule Management</div>
-                                    <div class="skill-score">10/10 - Expert Level</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-0%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Project Coordination & Tracking</div>
-                                    <div class="skill-score">8.1/10 - Advanced</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-19%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Internal & External Communications</div>
-                                    <div class="skill-score">9.3/10 - Expert</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-7%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Meeting Preparation & Facilitation</div>
-                                    <div class="skill-score">9.0/10 - Expert</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-10%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Confidentiality and Integrity</div>
-                                    <div class="skill-score">10/10 - Expert Level</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-0%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Strategic & Coaching Tab -->
-                <div class="tabs-content" id="strategic-content">
-                    <div class="card-minimal">
-                        <h3 class="heading-1 mb-6">Strategic & Coaching Capabilities</h3>
-                        <div class="space-y-4">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Executive & Leadership Coaching (ACC)</div>
-                                    <div class="skill-score">8.6/10 - ICF Certified</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-14%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Stakeholder & Relationship Management</div>
-                                    <div class="skill-score">9.2/10 - Expert</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-8%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Culture Carrier / Change Agent</div>
-                                    <div class="skill-score">8.8/10 - Advanced</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-12%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Strategic Planning & Execution</div>
-                                    <div class="skill-score">7.0/10 - Proficient</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-30%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Cross-Functional Coordination</div>
-                                    <div class="skill-score">8.5/10 - Advanced</div>
-                                    <div class="progress-container">
-                                        <div class="progress-indicator" style="transform: translateX(-15%)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Strategic Capabilities -->
+                <div class="card-minimal">
+                    <h3 class="heading-1">Strategic & Coaching Capabilities</h3>
+                    <ul class="space-y-3 mt-6">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Executive & Leadership Coaching (ACC)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Stakeholder & Relationship Management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Culture Carrier / Change Agent</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Strategic Planning & Execution</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-orange-600 mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span class="heading-2">Cross-Functional Coordination</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
