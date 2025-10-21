@@ -1,0 +1,308 @@
+{
+  "coaching": {
+    "id": "coaching",
+    "title": "Executive & Leadership Coaching",
+    "description": "ICF Associate Certified Coach specializing in ministry leadership development",
+    "icon": "🎯",
+    "content": "As an Associate Certified Coach (ACC) with the International Coach Federation, I specialize in developing ministry leaders at all levels. My coaching approach combines proven business methodologies with biblical wisdom to create sustainable transformation in leaders and organizations.",
+    "skills": [
+      "ICF Certified Coaching",
+      "Leadership Development",
+      "Strategic Planning",
+      "Team Dynamics",
+      "Conflict Resolution",
+      "Performance Management",
+      "Vision Casting",
+      "Organizational Health"
+    ],
+    "achievements": [
+      "Earned ICF Associate Certified Coach (ACC) credential in 2024",
+      "Successfully coached 15+ ministry staff members to increased effectiveness",
+      "Implemented coaching culture at Rock Church resulting in 25% improvement in staff satisfaction",
+      "Developed Leadership Pipeline program graduating 30+ emerging leaders",
+      "Created coaching framework specifically adapted for ministry contexts",
+      "Led executive coaching sessions for senior pastors across multiple denominations"
+    ],
+    "media": [
+      {
+        "type": "video",
+        "title": "Coaching Philosophy",
+        "description": "My approach to developing ministry leaders through coaching",
+        "url": "/videos/coaching-philosophy.mp4"
+      },
+      {
+        "type": "document",
+        "title": "ICF ACC Certification",
+        "description": "Official certification from International Coach Federation",
+        "url": "/documents/icf-acc-certificate.pdf"
+      },
+      {
+        "type": "video",
+        "title": "Leadership Development Success Story",
+        "description": "Case study of transforming a struggling ministry team",
+        "url": "/videos/leadership-case-study.mp4"
+      },
+      {
+        "type": "image",
+        "title": "Coaching Session in Action",
+        "description": "Working with a ministry leader on strategic planning",
+        "url": "/images/coaching-session.jpg"
+      }
+    ]
+  },
+  "preaching": {
+    "id": "preaching",
+    "title": "High-Impact Preaching & Communication",
+    "description": "Compelling biblical communication that drives engagement and growth",
+    "icon": "🎤",
+    "content": "My preaching ministry focuses on making biblical truth relevant and actionable for modern audiences. Through systematic expository preaching combined with practical application, I've seen consistent growth in attendance and spiritual engagement across multiple congregations.",
+    "skills": [
+      "Expository Preaching",
+      "Biblical Exegesis",
+      "Audience Engagement",
+      "Series Development",
+      "Multimedia Integration",
+      "Cross-Cultural Communication",
+      "Evangelistic Preaching",
+      "Teaching Ministry"
+    ],
+    "achievements": [
+      "Doubled attendance at Freeway Church through compelling preaching series",
+      "Developed 'Tech & Faith' sermon series connecting biblical truth to modern life",
+      "Created systematic discipleship pathway integrated with preaching calendar",
+      "Increased spiritual engagement metrics by 40% through interactive sermon elements",
+      "Launched multi-campus preaching strategy at East Coast International",
+      "Mentored 10+ emerging preachers in biblical communication"
+    ],
+    "media": [
+      {
+        "type": "video",
+        "title": "Finding Purpose in Technology",
+        "description": "Recent sermon connecting faith and technology",
+        "url": "/videos/purpose-in-tech-sermon.mp4"
+      },
+      {
+        "type": "video",
+        "title": "Digital Discipleship",
+        "description": "Building authentic community in the digital age",
+        "url": "/videos/digital-discipleship-sermon.mp4"
+      },
+      {
+        "type": "video",
+        "title": "Preaching Workshop",
+        "description": "Training session for emerging preachers",
+        "url": "/videos/preaching-workshop.mp4"
+      },
+      {
+        "type": "image",
+        "title": "Sunday Morning Service",
+        "description": "Preaching at Freeway Church",
+        "url": "/images/sunday-preaching.jpg"
+      }
+    ]
+  },
+  "executive_leadership": {
+    "id": "executive_leadership",
+    "title": "Executive Leadership & Strategic Planning",
+    "description": "Proven ability to lead large organizations with strategic vision",
+    "icon": "🏢",
+    "content": "With experience managing an 800-member congregation and $2+ million annual budget, I bring executive-level leadership capabilities to ministry contexts. My approach combines strategic thinking with pastoral heart to create sustainable organizational growth.",
+    "skills": [
+      "Strategic Planning",
+      "Budget Management",
+      "Board Relations",
+      "Risk Management",
+      "Policy Development",
+      "Stakeholder Engagement",
+      "Crisis Leadership",
+      "Change Management"
+    ],
+    "achievements": [
+      "Managed $2+ million annual budget with zero deficit years",
+      "Led 800-member congregation through successful pastoral transition",
+      "Implemented 4 Disciplines of Execution (4DX) framework across all ministries",
+      "Developed comprehensive strategic plan resulting in 30% growth over 3 years",
+      "Successfully navigated complex staff transitions maintaining organizational health",
+      "Created board governance structure improving decision-making efficiency by 50%"
+    ],
+    "media": [
+      {
+        "type": "document",
+        "title": "Strategic Plan 2019-2022",
+        "description": "Comprehensive strategic planning document for Rock Church",
+        "url": "/documents/strategic-plan-2019-2022.pdf"
+      },
+      {
+        "type": "video",
+        "title": "Leadership in Crisis",
+        "description": "How we navigated COVID-19 challenges while maintaining growth",
+        "url": "/videos/crisis-leadership.mp4"
+      },
+      {
+        "type": "image",
+        "title": "Executive Team Meeting",
+        "description": "Leading strategic planning session with senior staff",
+        "url": "/images/executive-meeting.jpg"
+      },
+      {
+        "type": "document",
+        "title": "Budget Performance Report",
+        "description": "Annual financial summary showing consistent surplus management",
+        "url": "/documents/budget-report.pdf"
+      }
+    ]
+  },
+  "team_building": {
+    "id": "team_building",
+    "title": "Team Building & Leadership Development",
+    "description": "Expert in developing and coaching teams for maximum effectiveness",
+    "icon": "👥",
+    "content": "I specialize in building high-performing ministry teams through intentional development, clear communication, and strategic frameworks. My experience includes direct leadership of 15+ staff members and development of leadership pipelines across multiple organizations.",
+    "skills": [
+      "Team Development",
+      "Performance Management",
+      "Leadership Pipeline",
+      "Conflict Resolution",
+      "Communication Systems",
+      "Talent Acquisition",
+      "Succession Planning",
+      "Culture Building"
+    ],
+    "achievements": [
+      "Built and led 15-person ministry team with 95% retention rate",
+      "Developed Academy of Urban Ministry graduating 30+ leaders",
+      "Implemented regular 1:1 coaching resulting in 40% improvement in staff satisfaction",
+      "Created leadership development pathway with measurable competency milestones",
+      "Successfully transitioned 5 team members into senior leadership roles",
+      "Designed team building retreats increasing collaboration effectiveness by 60%"
+    ],
+    "media": [
+      {
+        "type": "video",
+        "title": "Team Building Workshop",
+        "description": "Leading ministry staff through team effectiveness training",
+        "url": "/videos/team-building-workshop.mp4"
+      },
+      {
+        "type": "image",
+        "title": "Leadership Retreat",
+        "description": "Annual staff retreat focused on vision alignment",
+        "url": "/images/leadership-retreat.jpg"
+      },
+      {
+        "type": "document",
+        "title": "Leadership Development Curriculum",
+        "description": "Comprehensive program for emerging ministry leaders",
+        "url": "/documents/leadership-curriculum.pdf"
+      },
+      {
+        "type": "video",
+        "title": "Academy of Urban Ministry",
+        "description": "Program overview and graduate testimonials",
+        "url": "/videos/academy-overview.mp4"
+      }
+    ]
+  },
+  "financial_stewardship": {
+    "id": "financial_stewardship",
+    "title": "Financial Acumen & Budget Stewardship",
+    "description": "Strategic financial management with proven track record",
+    "icon": "💰",
+    "content": "I bring business-level financial acumen to ministry contexts, having successfully managed multi-million dollar budgets while maintaining fiscal responsibility and maximizing ministry impact. My approach combines strategic cost management with investment in growth initiatives.",
+    "skills": [
+      "Budget Development",
+      "Financial Analysis",
+      "Cash Flow Management",
+      "Investment Planning",
+      "Audit Compliance",
+      "Financial Reporting",
+      "Donor Relations",
+      "Stewardship Strategy"
+    ],
+    "achievements": [
+      "Managed $2+ million annual budget with consistent surplus performance",
+      "Implemented cost optimization strategies saving $150K annually while maintaining program quality",
+      "Developed 3-year financial sustainability plan ensuring long-term organizational health",
+      "Led capital campaign raising $500K for facility improvements ahead of schedule",
+      "Created financial dashboard improving budget transparency and accountability",
+      "Established emergency reserve fund equivalent to 6 months operating expenses"
+    ],
+    "media": [
+      {
+        "type": "document",
+        "title": "Annual Financial Report",
+        "description": "Comprehensive financial performance summary",
+        "url": "/documents/annual-financial-report.pdf"
+      },
+      {
+        "type": "video",
+        "title": "Stewardship Sunday Message",
+        "description": "Biblical perspective on financial stewardship",
+        "url": "/videos/stewardship-message.mp4"
+      },
+      {
+        "type": "image",
+        "title": "Budget Planning Session",
+        "description": "Working with finance committee on annual budget",
+        "url": "/images/budget-planning.jpg"
+      },
+      {
+        "type": "document",
+        "title": "Capital Campaign Results",
+        "description": "Summary of successful facility improvement campaign",
+        "url": "/documents/capital-campaign.pdf"
+      }
+    ]
+  },
+  "systems_health": {
+    "id": "systems_health",
+    "title": "Organizational Systems & Health",
+    "description": "Champion of operational excellence and healthy organizational culture",
+    "icon": "⚙️",
+    "content": "I specialize in creating and implementing systems that support organizational health and operational efficiency. My experience includes successful implementation of church management systems, process optimization, and culture development initiatives.",
+    "skills": [
+      "Process Optimization",
+      "System Implementation",
+      "Data Analytics",
+      "Quality Assurance",
+      "Policy Development",
+      "Culture Assessment",
+      "Change Management",
+      "Technology Integration"
+    ],
+    "achievements": [
+      "Championed church-wide implementation of Planning Center Online (PCO)",
+      "Developed data-driven decision-making processes improving ministry effectiveness",
+      "Created organizational health assessment tools identifying and addressing dysfunction",
+      "Streamlined administrative processes reducing overhead by 25%",
+      "Implemented communication systems improving information flow by 40%",
+      "Established quality metrics for all ministry departments"
+    ],
+    "media": [
+      {
+        "type": "video",
+        "title": "PCO Implementation Case Study",
+        "description": "How we successfully transitioned to digital ministry management",
+        "url": "/videos/pco-implementation.mp4"
+      },
+      {
+        "type": "document",
+        "title": "Organizational Health Assessment",
+        "description": "Comprehensive evaluation tool for ministry organizations",
+        "url": "/documents/org-health-assessment.pdf"
+      },
+      {
+        "type": "image",
+        "title": "Systems Training Workshop",
+        "description": "Training staff on new organizational systems",
+        "url": "/images/systems-training.jpg"
+      },
+      {
+        "type": "document",
+        "title": "Process Improvement Report",
+        "description": "Analysis and recommendations for operational efficiency",
+        "url": "/documents/process-improvement.pdf"
+      }
+    ]
+  }
+}

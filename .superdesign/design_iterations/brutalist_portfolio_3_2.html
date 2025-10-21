@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROY M. LUCIER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Space Mono', monospace !important;
+        }
+        
+        body {
+            background: white !important;
+            color: black !important;
+            line-height: 1.1 !important;
+        }
+        
+        .type-hero {
+            font-size: clamp(4rem, 15vw, 10rem);
+            font-weight: 700;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+        
+        .type-title {
+            font-size: clamp(2rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+        
+        .type-header {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        
+        .type-body {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+        
+        .type-label {
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .brutal-hover {
+            transition: all 0.1s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .brutal-hover::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border: 3px solid black;
+            opacity: 0;
+            transition: opacity 0.1s ease;
+        }
+        
+        .brutal-hover:hover::before {
+            opacity: 1;
+        }
+        
+        .brutal-hover:hover {
+            background: black !important;
+            color: white !important;
+        }
+        
+        .border-brutal {
+            border: 4px solid black;
+        }
+        
+        .layout-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        .layout-horizontal {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .metric-number {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            line-height: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="max-w-7xl mx-auto p-8">
+        
+        <!-- Hero Name - Horizontal Layout -->
+        <div class="layout-horizontal mb-16">
+            <div class="layout-stack">
+                <span class="type-hero">ROY</span>
+                <span class="type-hero">M.</span>
+                <span class="type-hero">LUCIER</span>
+            </div>
+            
+            <div class="border-brutal p-4 flex-shrink-0">
+                <div class="type-body">LEAD PASTOR /</div>
+                <div class="type-body">EXECUTIVE</div>
+                <div class="type-body">COACH</div>
+            </div>
+        </div>
+        
+        <!-- Mission Statement - Full Width -->
+        <div class="mb-12">
+            <div class="type-title mb-4">
+                PROVEN LEADERSHIP EXCELLENCE
+            </div>
+            <div class="type-body max-w-4xl leading-relaxed">
+                20+ YEARS EXECUTIVE MINISTRY EXPERIENCE • 800-1200 CONGREGATION GROWTH • 
+                TRANSFORMATIONAL LEADERSHIP • GENERATIONAL BRIDGE BUILDER
+            </div>
+        </div>
+        
+        <!-- Metrics - Inline Layout -->
+        <div class="layout-horizontal mb-12 items-center">
+            <div class="brutal-hover p-4">
+                <div class="metric-number text-red-600">150%</div>
+                <div class="type-label">CONGREGATIONAL GROWTH</div>
+            </div>
+            
+            <div class="brutal-hover p-4">
+                <div class="metric-number text-blue-600">$2M+</div>
+                <div class="type-label">ANNUAL BUDGET</div>
+            </div>
+            
+            <div class="brutal-hover p-4">
+                <div class="metric-number text-green-600">95%</div>
+                <div class="type-label">STAFF RETENTION</div>
+            </div>
+            
+            <div class="brutal-hover p-4">
+                <div class="metric-number text-purple-600">15</div>
+                <div class="type-label">TEAM MEMBERS</div>
+            </div>
+        </div>
+        
+        <!-- Core Competencies - Two Column -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div>
+                <div class="type-header mb-6">CORE STRENGTHS</div>
+                
+                <div class="space-y-4">
+                    <div class="brutal-hover p-4">
+                        <div class="type-body">BIBLICAL PREACHING</div>
+                        <div class="type-label">EXPOSITORY • TRANSFORMATIONAL</div>
+                    </div>
+                    
+                    <div class="brutal-hover p-4">
+                        <div class="type-body">TEAM LEADERSHIP</div>
+                        <div class="type-label">COACHING • DEVELOPMENT</div>
+                    </div>
+                    
+                    <div class="brutal-hover p-4">
+                        <div class="type-body">STRATEGIC OPERATIONS</div>
+                        <div class="type-label">BUDGET • SYSTEMS • GROWTH</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="type-header mb-6">EXPERIENCE PATH</div>
+                
+                <div class="space-y-4">
+                    <div class="brutal-hover p-4">
+                        <div class="type-body">YOUTH PASTOR</div>
+                        <div class="type-label">FOUNDATION YEARS</div>
+                    </div>
+                    
+                    <div class="brutal-hover p-4">
+                        <div class="type-body">ASSOCIATE PASTOR</div>
+                        <div class="type-label">DEVELOPMENT PHASE</div>
+                    </div>
+                    
+                    <div class="brutal-hover p-4">
+                        <div class="type-body">LEAD PASTOR</div>
+                        <div class="type-label">PROVEN EXCELLENCE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vision Statement -->
+        <div class="border-brutal bg-black text-white p-8 mb-12">
+            <div class="type-header mb-4">LEADERSHIP PHILOSOPHY</div>
+            <div class="type-body leading-relaxed max-w-4xl">
+                BUILDING GENERATIONALLY DIVERSE COMMUNITIES THAT CREATE LASTING 
+                KINGDOM IMPACT. PROVEN ABILITY TO SCALE VISION, DEVELOP TEAMS, 
+                AND TRANSFORM ORGANIZATIONAL CULTURE THROUGH STRATEGIC EXCELLENCE.
+            </div>
+        </div>
+        
+        <!-- Contact Section - Horizontal -->
+        <div>
+            <div class="type-header mb-6">CONNECT WITH ME</div>
+            
+            <div class="layout-horizontal items-stretch gap-4">
+                <a href="tel:313.820.5831" class="brutal-hover border-brutal bg-red-600 text-white p-6 no-underline flex-1 text-center">
+                    <div class="type-body">CALL NOW</div>
+                    <div class="type-label">313.820.5831</div>
+                </a>
+                
+                <a href="mailto:Rmlucier@gmail.com" class="brutal-hover border-brutal p-6 no-underline flex-1 text-center">
+                    <div class="type-body">EMAIL</div>
+                    <div class="type-label">RMLUCIER@GMAIL.COM</div>
+                </a>
+                
+                <button class="brutal-hover border-brutal p-6 flex-1">
+                    <div class="type-body">VIEW RESUME</div>
+                    <div class="type-label">FULL DETAILS</div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-center type-label opacity-30 mt-16">
+            ROY M. LUCIER • 2024 • LEAD PASTOR / EXECUTIVE COACH
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "sermons": [
+    {
+      "id": "sermon-001",
+      "title": "Finding Purpose in Technology",
+      "date": "2024-08-15",
+      "duration": "28:45",
+      "scripture": "Proverbs 27:17",
+      "topics": ["purpose", "technology", "calling"],
+      "videoUrl": "/videos/sermon-001.mp4",
+      "thumbnail": "/images/sermon-001-thumb.jpg",
+      "description": "Exploring how technology can be used as a tool for ministry and service to others.",
+      "notes": "As iron sharpens iron, so one person sharpens another. How can we use technology to sharpen and serve our communities?",
+      "series": "Tech & Faith"
+    },
+    {
+      "id": "sermon-002",
+      "title": "Digital Discipleship",
+      "date": "2024-07-22",
+      "duration": "32:12",
+      "scripture": "Matthew 28:19-20",
+      "topics": ["discipleship", "community", "digital"],
+      "videoUrl": "/videos/sermon-002.mp4",
+      "thumbnail": "/images/sermon-002-thumb.jpg",
+      "description": "Building authentic community and discipleship in the digital age.",
+      "notes": "Go and make disciples of all nations... How do we fulfill the Great Commission in our connected world?",
+      "series": "Tech & Faith"
+    }
+  ],
+  "series": [
+    {
+      "id": "series-001",
+      "name": "Tech & Faith",
+      "description": "Exploring the intersection of technology and faith",
+      "sermonCount": 2,
+      "thumbnail": "/images/tech-faith-series.jpg"
+    }
+  ]
+}

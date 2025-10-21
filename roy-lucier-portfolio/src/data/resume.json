@@ -1,0 +1,138 @@
+{
+  "personalInfo": {
+    "name": "Roy M. Lucier",
+    "title": "Executive Ministry Leader | Lead Pastor | Coach",
+    "email": "Rmlucier@gmail.com",
+    "phone": "313.820.5831",
+    "linkedin": "https://www.linkedin.com/in/roy-l-18a88964/",
+    "tagline": "Executive-level ministry leader with 20+ years building generationally diverse churches and leading multi-million dollar operations",
+    "avatar": "/images/roy-avatar.jpg",
+    "summary": "Executive-level ministry leader with a proven track record of leading large ministry operations, revitalizing congregations, and providing strategic oversight for multi-million dollar budgets. My experience in an 800-member church has prepared me to provide the robust, vision-driven leadership required for a congregation of 800-1200. I am seeking a long-term Lead Pastor position in Michigan or Northern Ohio where I can invest the next 20 years of my ministry, building a generationally diverse church and leading it to make a lasting impact on its community."
+  },
+  "experience": [
+    {
+      "id": "exp-001",
+      "company": "Freeway Church",
+      "location": "Albion, MI",
+      "position": "Lead Pastor",
+      "startDate": "2021-10-01",
+      "endDate": null,
+      "current": true,
+      "description": "Provided turnaround leadership to revitalize a congregation in a rural community of 6,000, establishing a foundation for scalable, long-term health.",
+      "achievements": [
+        "Skillfully managed the transition from a 22-year long-tenured pastor, honoring the church's legacy while successfully casting vision for a new chapter of growth and outreach",
+        "More than doubled weekly attendance from 30 to 75 by implementing a clear discipleship pathway and delivering compelling, biblically-grounded preaching",
+        "Intentionally cultivated a diverse congregation, successfully growing minority representation to over 20% of the church body"
+      ],
+      "skills": ["Transitional Leadership", "Congregational Growth", "Multi-Ethnic Community", "Vision Casting"]
+    },
+    {
+      "id": "exp-002",
+      "company": "Rock Church",
+      "location": "Fair Haven, MI",
+      "position": "Executive Pastor",
+      "startDate": "2019-01-01",
+      "endDate": "2021-09-30",
+      "current": false,
+      "description": "Functioned as the chief operational leader, providing executive oversight for all ministries, staff, and finances for a congregation of 800 with an annual budget of ~$2 million.",
+      "achievements": [
+        "Provided executive oversight for a 15-person staff, utilizing a coaching model to foster individual growth and team alignment",
+        "Implemented strategic frameworks (4DX, 1:1s) that increased ministry effectiveness",
+        "Optimized a ~$2 million budget through strategic cost controls and resource allocation, ensuring maximum ministry impact and long-term financial stability",
+        "Ensured ministry continuity and organizational health by skillfully managing complex staff transitions and dismissals with wisdom and integrity",
+        "Championed the church-wide implementation of Planning Center Online (PCO) to scale ministry operations, streamline processes, and improve data-driven decision-making"
+      ],
+      "skills": ["Executive Leadership", "Staff Development", "Fiscal Management", "Organizational Health", "Systems Implementation"]
+    },
+    {
+      "id": "exp-003",
+      "company": "East Coast International Church",
+      "location": "Lynn, MA",
+      "position": "Associate Pastor",
+      "startDate": "2015-01-01",
+      "endDate": "2018-12-31",
+      "current": false,
+      "description": "Directed key ministry areas in a diverse, urban setting, focusing on leadership development and strategic expansion.",
+      "achievements": [
+        "Launched the 'Academy of Urban Ministry,' a strategic discipleship program designed to equip emerging leaders for high-impact ministry",
+        "Played a key role in launching a new campus and additional services to accommodate congregational growth and expand the church's regional influence"
+      ],
+      "skills": ["Leadership Pipeline Development", "Ministry Expansion", "Urban Ministry", "Campus Development"]
+    },
+    {
+      "id": "exp-004",
+      "company": "Oak Hills Church",
+      "location": "Eagan, MN",
+      "position": "Youth Pastor",
+      "startDate": "2010-01-01",
+      "endDate": "2014-12-31",
+      "current": false,
+      "description": "Built a thriving youth ministry that successfully integrated students into the broader life of the church, fostering long-term faith.",
+      "achievements": [
+        "Developed comprehensive youth program integrating students into church community",
+        "Created sustainable discipleship pathways for teenagers and young adults"
+      ],
+      "skills": ["Youth Ministry", "Student Integration", "Long-term Faith Development", "Program Development"]
+    }
+  ],
+  "coreStrengths": [
+    "Executive Leadership & Strategic Planning",
+    "High-Impact Preaching & Communication",
+    "Generational Bridge-Building & Outreach",
+    "Team Building & Leadership Development",
+    "Executive & Leadership Coaching",
+    "Financial Acumen & Budget Stewardship",
+    "Organizational Systems & Health",
+    "Small Group Discipleship Strategy"
+  ],
+  "education": [
+    {
+      "id": "edu-001",
+      "degree": "Bachelor of Arts in Pastoral Studies and Counseling",
+      "minor": "Biblical Studies",
+      "institution": "North Central University",
+      "location": "Minneapolis, MN",
+      "graduationDate": "2010"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-001",
+      "name": "Ordained Minister",
+      "issuer": "Assemblies of God",
+      "dateRange": "2010 – Present",
+      "verified": true,
+      "current": true
+    },
+    {
+      "id": "cert-002",
+      "name": "Associate Certified Coach (ACC)",
+      "issuer": "International Coach Federation",
+      "dateRange": "2024 – Present",
+      "verified": true,
+      "current": true
+    }
+  ],
+  "keyMetrics": [
+    {
+      "metric": "Congregational Growth",
+      "value": "150%",
+      "description": "Doubled attendance from 30 to 75 at current position"
+    },
+    {
+      "metric": "Budget Management",
+      "value": "$2M+",
+      "description": "Annual budget oversight with strategic optimization"
+    },
+    {
+      "metric": "Staff Leadership",
+      "value": "15 People",
+      "description": "Direct oversight and development of ministry staff"
+    },
+    {
+      "metric": "Ministry Experience",
+      "value": "14+ Years",
+      "description": "Progressive leadership roles from Youth Pastor to Lead Pastor"
+    }
+  ]
+}

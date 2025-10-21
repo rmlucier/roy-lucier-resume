@@ -1,0 +1,537 @@
+{
+  "version": "1.0",
+  "type": "superdesign",
+  "metadata": {
+    "name": "Spatial Navigation Portfolio",
+    "description": "3D-inspired interface with floating content bubbles",
+    "author": "Claude Code",
+    "created": "2025-01-08T12:00:00Z",
+    "tags": ["3d", "spatial", "immersive", "floating"]
+  },
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "backgroundColor": "#000000",
+    "perspective": 1000,
+    "transform3d": true
+  },
+  "spatialConfig": {
+    "cameraPosition": { "x": 0, "y": 0, "z": 0 },
+    "fieldOfView": 75,
+    "enableRotation": true,
+    "enableZoom": true
+  },
+  "layers": [
+    {
+      "id": "backgroundGrid",
+      "name": "Background Grid",
+      "type": "grid-pattern",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900,
+      "properties": {
+        "gridSize": 50,
+        "color": "rgba(255,255,255,0.1)",
+        "lineWidth": 1,
+        "opacity": 0.1
+      }
+    },
+    {
+      "id": "controlPanel",
+      "name": "Control Panel",
+      "type": "floating-panel",
+      "x": 40,
+      "y": 40,
+      "width": 280,
+      "height": 320,
+      "properties": {
+        "backgroundColor": "rgba(255,255,255,0.1)",
+        "backdropFilter": "blur(12px)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.2)"
+        },
+        "borderRadius": 12,
+        "zIndex": 50
+      }
+    },
+    {
+      "id": "panelHeader",
+      "name": "Panel Header",
+      "type": "text",
+      "x": 60,
+      "y": 70,
+      "properties": {
+        "text": "🪐 Spatial Portfolio",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#ffffff",
+        "fontFamily": "system-ui"
+      }
+    },
+    {
+      "id": "exploreBtn",
+      "name": "Explore View Button",
+      "type": "mode-button",
+      "x": 60,
+      "y": 110,
+      "width": 240,
+      "height": 40,
+      "properties": {
+        "text": "🌌 Explore View",
+        "active": true,
+        "backgroundColor": "#3b82f6",
+        "color": "#ffffff",
+        "border": "none",
+        "borderRadius": 8,
+        "fontSize": 14,
+        "fontWeight": 500
+      }
+    },
+    {
+      "id": "timelineBtn",
+      "name": "Timeline View Button",
+      "type": "mode-button",
+      "x": 60,
+      "y": 160,
+      "width": 240,
+      "height": 40,
+      "properties": {
+        "text": "📅 Timeline View",
+        "active": false,
+        "backgroundColor": "transparent",
+        "color": "#ffffff",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 8,
+        "fontSize": 14,
+        "fontWeight": 500
+      }
+    },
+    {
+      "id": "networkBtn",
+      "name": "Network View Button",
+      "type": "mode-button",
+      "x": 60,
+      "y": 210,
+      "width": 240,
+      "height": 40,
+      "properties": {
+        "text": "⚡ Network View",
+        "active": false,
+        "backgroundColor": "transparent",
+        "color": "#ffffff",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 8,
+        "fontSize": 14,
+        "fontWeight": 500
+      }
+    },
+    {
+      "id": "spatialContainer",
+      "name": "3D Spatial Container",
+      "type": "3d-space",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900,
+      "properties": {
+        "perspective": 1000,
+        "transformStyle": "preserve-3d",
+        "rotationSpeed": 0.01,
+        "zIndex": 1
+      }
+    },
+    {
+      "id": "connectionsSvg",
+      "name": "Connection Lines",
+      "type": "svg-overlay",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900,
+      "properties": {
+        "zIndex": 1,
+        "pointerEvents": "none"
+      }
+    },
+    {
+      "id": "centerNode",
+      "name": "Roy M. Lucier - Center Node",
+      "type": "spatial-node",
+      "x": 720,
+      "y": 450,
+      "z": 0,
+      "width": 300,
+      "height": 200,
+      "properties": {
+        "category": "personal",
+        "title": "Roy M. Lucier",
+        "description": "Executive Ministry Leader ready for next chapter",
+        "icon": "⛪",
+        "backgroundColor": "linear-gradient(135deg, #3b82f6, #1e40af)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 16,
+        "boxShadow": "0 20px 40px rgba(0,0,0,0.5)",
+        "scale": 1.5,
+        "rotateY": 360,
+        "rotationDuration": 20,
+        "connections": ["leadership", "preaching", "coaching", "growth", "contact"],
+        "zIndex": 10
+      }
+    },
+    {
+      "id": "centerAvatar",
+      "name": "Center Avatar",
+      "type": "avatar",
+      "x": 720,
+      "y": 420,
+      "width": 64,
+      "height": 64,
+      "properties": {
+        "src": "/roy-avatar.jpg",
+        "fallback": "RL",
+        "borderRadius": "50%",
+        "ring": {
+          "width": 4,
+          "color": "rgba(255,255,255,0.5)"
+        }
+      }
+    },
+    {
+      "id": "leadershipNode",
+      "name": "Leadership Node",
+      "type": "spatial-node",
+      "x": 420,
+      "y": 250,
+      "z": 50,
+      "width": 200,
+      "height": 150,
+      "properties": {
+        "category": "skills",
+        "title": "Team Leadership",
+        "description": "15-person staff with 95% retention rate",
+        "icon": "👥",
+        "metric": { "value": "95%", "label": "Staff Retention Rate" },
+        "backgroundColor": "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 12,
+        "boxShadow": "0 15px 30px rgba(0,0,0,0.3)",
+        "connections": ["centerNode", "coaching", "operations"],
+        "zIndex": 5
+      }
+    },
+    {
+      "id": "preachingNode",
+      "name": "Preaching Node",
+      "type": "spatial-node",
+      "x": 1020,
+      "y": 200,
+      "z": 30,
+      "width": 200,
+      "height": 150,
+      "properties": {
+        "category": "skills",
+        "title": "Biblical Preaching",
+        "description": "Compelling, expository preaching that transforms lives",
+        "icon": "📖",
+        "metric": { "value": "150%", "label": "Congregational Growth" },
+        "backgroundColor": "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 12,
+        "boxShadow": "0 15px 30px rgba(0,0,0,0.3)",
+        "connections": ["centerNode", "growth"],
+        "zIndex": 5
+      }
+    },
+    {
+      "id": "coachingNode",
+      "name": "Coaching Node",
+      "type": "spatial-node",
+      "x": 470,
+      "y": 650,
+      "z": 80,
+      "width": 200,
+      "height": 150,
+      "properties": {
+        "category": "skills",
+        "title": "Coaching Systems",
+        "description": "Systematic approach to developing leaders",
+        "icon": "🎯",
+        "metric": { "value": "40%", "label": "Team Effectiveness Increase" },
+        "backgroundColor": "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 12,
+        "boxShadow": "0 15px 30px rgba(0,0,0,0.3)",
+        "connections": ["centerNode", "leadership"],
+        "zIndex": 5
+      }
+    },
+    {
+      "id": "growthNode",
+      "name": "Growth Node",
+      "type": "spatial-node",
+      "x": 1000,
+      "y": 700,
+      "z": 60,
+      "width": 200,
+      "height": 150,
+      "properties": {
+        "category": "achievements",
+        "title": "Church Growth",
+        "description": "Proven track record of sustainable growth",
+        "icon": "📈",
+        "metric": { "value": "150%", "label": "Growth Achievement" },
+        "backgroundColor": "linear-gradient(135deg, #f59e0b, #d97706)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 12,
+        "boxShadow": "0 15px 30px rgba(0,0,0,0.3)",
+        "connections": ["centerNode", "preaching", "operations"],
+        "zIndex": 5
+      }
+    },
+    {
+      "id": "operationsNode",
+      "name": "Operations Node",
+      "type": "spatial-node",
+      "x": 720,
+      "y": 100,
+      "z": 40,
+      "width": 200,
+      "height": 150,
+      "properties": {
+        "category": "experience",
+        "title": "Operations Excellence",
+        "description": "Multi-million dollar budget management",
+        "icon": "🏆",
+        "metric": { "value": "$2M+", "label": "Annual Budget Oversight" },
+        "backgroundColor": "linear-gradient(135deg, #10b981, #059669)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 12,
+        "boxShadow": "0 15px 30px rgba(0,0,0,0.3)",
+        "connections": ["centerNode", "leadership", "growth"],
+        "zIndex": 5
+      }
+    },
+    {
+      "id": "contactNode",
+      "name": "Contact Node",
+      "type": "spatial-node",
+      "x": 720,
+      "y": 750,
+      "z": 70,
+      "width": 200,
+      "height": 150,
+      "properties": {
+        "category": "contact",
+        "title": "Get In Touch",
+        "description": "Ready to discuss ministry opportunities",
+        "icon": "📞",
+        "contactData": {
+          "phone": "313.820.5831",
+          "email": "Rmlucier@gmail.com",
+          "linkedin": "linkedin.com/in/roy-l-18a88964/"
+        },
+        "backgroundColor": "linear-gradient(135deg, #ef4444, #dc2626)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 12,
+        "boxShadow": "0 15px 30px rgba(0,0,0,0.3)",
+        "connections": ["centerNode"],
+        "zIndex": 5
+      }
+    },
+    {
+      "id": "infoPanel",
+      "name": "Bottom Info Panel",
+      "type": "info-panel",
+      "x": 420,
+      "y": 820,
+      "width": 600,
+      "height": 60,
+      "properties": {
+        "backgroundColor": "rgba(255,255,255,0.1)",
+        "backdropFilter": "blur(12px)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.2)"
+        },
+        "borderRadius": 12,
+        "zIndex": 40,
+        "textAlign": "center",
+        "visible": false
+      }
+    },
+    {
+      "id": "instructions",
+      "name": "Instructions Panel",
+      "type": "instructions-panel",
+      "x": 1120,
+      "y": 820,
+      "width": 280,
+      "height": 60,
+      "properties": {
+        "backgroundColor": "rgba(255,255,255,0.1)",
+        "backdropFilter": "blur(12px)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.2)"
+        },
+        "borderRadius": 12,
+        "zIndex": 40,
+        "instructions": [
+          "• Click nodes to explore",
+          "• Scroll to rotate view",
+          "• Hover for details"
+        ],
+        "fontSize": 10,
+        "color": "rgba(255,255,255,0.6)"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "centerNode",
+      "to": "leadershipNode",
+      "properties": {
+        "color": "rgba(255,255,255,0.3)",
+        "width": 1,
+        "opacity": 0.6
+      }
+    },
+    {
+      "from": "centerNode",
+      "to": "preachingNode",
+      "properties": {
+        "color": "rgba(255,255,255,0.3)",
+        "width": 1,
+        "opacity": 0.6
+      }
+    },
+    {
+      "from": "centerNode",
+      "to": "coachingNode",
+      "properties": {
+        "color": "rgba(255,255,255,0.3)",
+        "width": 1,
+        "opacity": 0.6
+      }
+    },
+    {
+      "from": "centerNode",
+      "to": "growthNode",
+      "properties": {
+        "color": "rgba(255,255,255,0.3)",
+        "width": 1,
+        "opacity": 0.6
+      }
+    },
+    {
+      "from": "centerNode",
+      "to": "operationsNode",
+      "properties": {
+        "color": "rgba(255,255,255,0.3)",
+        "width": 1,
+        "opacity": 0.6
+      }
+    },
+    {
+      "from": "centerNode",
+      "to": "contactNode",
+      "properties": {
+        "color": "rgba(255,255,255,0.3)",
+        "width": 1,
+        "opacity": 0.6
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "trigger": "click",
+      "target": "node*",
+      "action": "selectNode",
+      "properties": {
+        "updateState": ["activeNode"],
+        "scaleEffect": 1.3,
+        "glowEffect": true,
+        "showInfoPanel": true
+      }
+    },
+    {
+      "trigger": "hover",
+      "target": "node*",
+      "action": "highlightNode",
+      "properties": {
+        "scaleEffect": 1.1,
+        "glowEffect": true,
+        "showConnections": true,
+        "updateState": ["hoveredNode"]
+      }
+    },
+    {
+      "trigger": "scroll",
+      "target": "spatialContainer",
+      "action": "rotateSpace",
+      "properties": {
+        "axis": "y",
+        "sensitivity": 0.5
+      }
+    },
+    {
+      "trigger": "click",
+      "target": "*Btn",
+      "action": "changeViewMode",
+      "properties": {
+        "updateState": ["viewMode"],
+        "rearrangeNodes": true
+      }
+    }
+  ],
+  "animations": {
+    "floatRotate": {
+      "keyframes": [
+        { "rotateY": 0 },
+        { "rotateY": 360 }
+      ],
+      "duration": 20000,
+      "iterations": "infinite",
+      "easing": "linear"
+    },
+    "breathe": {
+      "keyframes": [
+        { "scale": 1, "opacity": 0.8 },
+        { "scale": 1.05, "opacity": 1 },
+        { "scale": 1, "opacity": 0.8 }
+      ],
+      "duration": 4000,
+      "iterations": "infinite",
+      "easing": "ease-in-out"
+    }
+  }
+}

@@ -1,0 +1,675 @@
+{
+  "name": "Interactive Storytelling Portfolio",
+  "description": "Game-like narrative experience with discovery mechanics and progressive chapter unlocking",
+  "version": "1.0.0",
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "background": {
+      "type": "gradient",
+      "colors": ["#1e1b4b", "#7c3aed", "#1e40af"],
+      "direction": "diagonal"
+    }
+  },
+  "gameState": {
+    "currentChapter": "start",
+    "unlockedChapters": ["start"],
+    "completedChapters": [],
+    "discoveredAchievements": [],
+    "storyProgress": 0
+  },
+  "components": [
+    {
+      "id": "game-header",
+      "type": "header-bar",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 80,
+      "properties": {
+        "background": "rgba(30, 27, 75, 0.9)",
+        "backdropBlur": true,
+        "border": {
+          "bottom": {
+            "width": 1,
+            "color": "rgba(255,255,255,0.2)"
+          }
+        }
+      }
+    },
+    {
+      "id": "game-title",
+      "type": "text",
+      "x": 40,
+      "y": 30,
+      "properties": {
+        "text": "The Roy Lucier Story",
+        "fontSize": 24,
+        "fontWeight": 700,
+        "color": "#ffffff",
+        "fontFamily": "system"
+      }
+    },
+    {
+      "id": "achievement-counter",
+      "type": "counter",
+      "x": 1200,
+      "y": 20,
+      "width": 200,
+      "height": 40,
+      "properties": {
+        "icon": "🏆",
+        "label": "Achievements",
+        "count": 0,
+        "color": "#fbbf24",
+        "background": "rgba(255,255,255,0.1)",
+        "borderRadius": 8
+      }
+    },
+    {
+      "id": "progress-bar",
+      "type": "progress",
+      "x": 40,
+      "y": 55,
+      "width": 1360,
+      "height": 8,
+      "properties": {
+        "value": 0,
+        "max": 100,
+        "color": "#3b82f6",
+        "background": "rgba(255,255,255,0.2)",
+        "borderRadius": 4
+      }
+    },
+    {
+      "id": "story-map-sidebar",
+      "type": "sidebar",
+      "x": 0,
+      "y": 80,
+      "width": 480,
+      "height": 820,
+      "properties": {
+        "background": "rgba(30, 27, 75, 0.8)",
+        "backdropBlur": true,
+        "border": {
+          "right": {
+            "width": 1,
+            "color": "rgba(255,255,255,0.2)"
+          }
+        },
+        "scrollable": true
+      }
+    },
+    {
+      "id": "story-map-title",
+      "type": "text",
+      "x": 40,
+      "y": 120,
+      "properties": {
+        "text": "Story Map",
+        "fontSize": 18,
+        "fontWeight": 600,
+        "color": "#ffffff",
+        "fontFamily": "system"
+      }
+    },
+    {
+      "id": "chapter-start",
+      "type": "chapter-node",
+      "x": 40,
+      "y": 160,
+      "width": 400,
+      "height": 80,
+      "properties": {
+        "id": "start",
+        "title": "The Beginning",
+        "subtitle": "A Call to Ministry",
+        "icon": "❤️",
+        "unlocked": true,
+        "completed": false,
+        "active": true,
+        "background": "rgba(59, 130, 246, 0.3)",
+        "border": {
+          "width": 1,
+          "color": "#3b82f6"
+        },
+        "borderRadius": 8
+      }
+    },
+    {
+      "id": "chapter-youth-ministry",
+      "type": "chapter-node",
+      "x": 40,
+      "y": 260,
+      "width": 400,
+      "height": 80,
+      "properties": {
+        "id": "youth-ministry",
+        "title": "Youth Ministry",
+        "subtitle": "Shaping the Next Generation",
+        "icon": "👥",
+        "unlocked": false,
+        "completed": false,
+        "active": false,
+        "background": "rgba(107, 114, 128, 0.1)",
+        "border": {
+          "width": 1,
+          "color": "rgba(107, 114, 128, 0.2)"
+        },
+        "borderRadius": 8,
+        "locked": true
+      }
+    },
+    {
+      "id": "chapter-education",
+      "type": "chapter-node",
+      "x": 40,
+      "y": 360,
+      "width": 400,
+      "height": 80,
+      "properties": {
+        "id": "education",
+        "title": "Educational Foundation",
+        "subtitle": "Building Biblical Knowledge",
+        "icon": "💡",
+        "unlocked": false,
+        "completed": false,
+        "active": false,
+        "background": "rgba(107, 114, 128, 0.1)",
+        "border": {
+          "width": 1,
+          "color": "rgba(107, 114, 128, 0.2)"
+        },
+        "borderRadius": 8,
+        "locked": true
+      }
+    },
+    {
+      "id": "chapter-associate-pastor",
+      "type": "chapter-node",
+      "x": 40,
+      "y": 460,
+      "width": 400,
+      "height": 80,
+      "properties": {
+        "id": "associate-pastor",
+        "title": "Associate Pastor",
+        "subtitle": "Learning Executive Leadership",
+        "icon": "🎯",
+        "unlocked": false,
+        "completed": false,
+        "active": false,
+        "background": "rgba(107, 114, 128, 0.1)",
+        "border": {
+          "width": 1,
+          "color": "rgba(107, 114, 128, 0.2)"
+        },
+        "borderRadius": 8,
+        "locked": true
+      }
+    },
+    {
+      "id": "chapter-executive-pastor",
+      "type": "chapter-node",
+      "x": 40,
+      "y": 560,
+      "width": 400,
+      "height": 80,
+      "properties": {
+        "id": "executive-pastor",
+        "title": "Executive Pastor",
+        "subtitle": "Strategic Operations Leadership",
+        "icon": "⭐",
+        "unlocked": false,
+        "completed": false,
+        "active": false,
+        "background": "rgba(107, 114, 128, 0.1)",
+        "border": {
+          "width": 1,
+          "color": "rgba(107, 114, 128, 0.2)"
+        },
+        "borderRadius": 8,
+        "locked": true
+      }
+    },
+    {
+      "id": "chapter-freeway-church",
+      "type": "chapter-node",
+      "x": 40,
+      "y": 660,
+      "width": 400,
+      "height": 80,
+      "properties": {
+        "id": "freeway-church",
+        "title": "Lead Pastor",
+        "subtitle": "Freeway Church Transformation",
+        "icon": "📍",
+        "unlocked": false,
+        "completed": false,
+        "active": false,
+        "background": "rgba(107, 114, 128, 0.1)",
+        "border": {
+          "width": 1,
+          "color": "rgba(107, 114, 128, 0.2)"
+        },
+        "borderRadius": 8,
+        "locked": true
+      }
+    },
+    {
+      "id": "chapter-future-vision",
+      "type": "chapter-node",
+      "x": 40,
+      "y": 760,
+      "width": 400,
+      "height": 80,
+      "properties": {
+        "id": "future-vision",
+        "title": "Future Vision",
+        "subtitle": "Ready for Greater Impact",
+        "icon": "📅",
+        "unlocked": false,
+        "completed": false,
+        "active": false,
+        "background": "rgba(107, 114, 128, 0.1)",
+        "border": {
+          "width": 1,
+          "color": "rgba(107, 114, 128, 0.2)"
+        },
+        "borderRadius": 8,
+        "locked": true
+      }
+    },
+    {
+      "id": "main-content-area",
+      "type": "content-panel",
+      "x": 480,
+      "y": 80,
+      "width": 960,
+      "height": 820,
+      "properties": {
+        "background": "transparent",
+        "scrollable": true
+      }
+    },
+    {
+      "id": "chapter-header",
+      "type": "chapter-header",
+      "x": 720,
+      "y": 150,
+      "width": 480,
+      "height": 200,
+      "properties": {
+        "textAlign": "center"
+      }
+    },
+    {
+      "id": "chapter-icon-container",
+      "type": "icon-container",
+      "x": 920,
+      "y": 170,
+      "width": 80,
+      "height": 80,
+      "properties": {
+        "background": "rgba(255,255,255,0.1)",
+        "borderRadius": "50%",
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": "center"
+      }
+    },
+    {
+      "id": "chapter-icon",
+      "type": "icon",
+      "x": 940,
+      "y": 190,
+      "width": 40,
+      "height": 40,
+      "properties": {
+        "icon": "❤️",
+        "fontSize": 32
+      }
+    },
+    {
+      "id": "chapter-title",
+      "type": "text",
+      "x": 720,
+      "y": 270,
+      "properties": {
+        "text": "The Beginning",
+        "fontSize": 48,
+        "fontWeight": 700,
+        "color": "#ffffff",
+        "textAlign": "center",
+        "width": 480
+      }
+    },
+    {
+      "id": "chapter-subtitle",
+      "type": "text",
+      "x": 720,
+      "y": 320,
+      "properties": {
+        "text": "A Call to Ministry",
+        "fontSize": 20,
+        "fontWeight": 400,
+        "color": "#93c5fd",
+        "textAlign": "center",
+        "width": 480
+      }
+    },
+    {
+      "id": "key-metric-card",
+      "type": "metric-card",
+      "x": 800,
+      "y": 360,
+      "width": 320,
+      "height": 120,
+      "properties": {
+        "background": "rgba(255,255,255,0.1)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.2)"
+        },
+        "borderRadius": 12,
+        "backdropBlur": true,
+        "textAlign": "center",
+        "padding": 16
+      }
+    },
+    {
+      "id": "metric-value",
+      "type": "text",
+      "x": 960,
+      "y": 390,
+      "properties": {
+        "text": "2004",
+        "fontSize": 32,
+        "fontWeight": 700,
+        "color": "#fbbf24",
+        "textAlign": "center"
+      }
+    },
+    {
+      "id": "metric-label",
+      "type": "text",
+      "x": 960,
+      "y": 430,
+      "properties": {
+        "text": "Ministry Journey Began",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "color": "rgba(255,255,255,0.8)",
+        "textAlign": "center"
+      }
+    },
+    {
+      "id": "chapter-content-card",
+      "type": "content-card",
+      "x": 560,
+      "y": 500,
+      "width": 800,
+      "height": 200,
+      "properties": {
+        "background": "rgba(255,255,255,0.1)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.2)"
+        },
+        "borderRadius": 12,
+        "backdropBlur": true,
+        "padding": 32
+      }
+    },
+    {
+      "id": "chapter-description",
+      "type": "text",
+      "x": 590,
+      "y": 540,
+      "properties": {
+        "text": "Every great story has a beginning. Roy's journey started with a heart for people and a calling to serve. From early leadership roles to discovering his passion for ministry, this is where it all began.",
+        "fontSize": 18,
+        "fontWeight": 400,
+        "color": "#ffffff",
+        "lineHeight": 1.6,
+        "width": 740
+      }
+    },
+    {
+      "id": "achievements-grid",
+      "type": "achievements-grid",
+      "x": 590,
+      "y": 620,
+      "width": 740,
+      "height": 60,
+      "properties": {
+        "display": "grid",
+        "gridTemplateColumns": "repeat(2, 1fr)",
+        "gap": 16
+      }
+    },
+    {
+      "id": "achievement-1",
+      "type": "achievement-badge",
+      "x": 590,
+      "y": 620,
+      "width": 362,
+      "height": 60,
+      "properties": {
+        "text": "First Leadership Role",
+        "background": "linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2))",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.2)"
+        },
+        "borderRadius": 8,
+        "textAlign": "center",
+        "fontSize": 12,
+        "fontWeight": 500,
+        "color": "#ffffff"
+      }
+    },
+    {
+      "id": "achievement-2",
+      "type": "achievement-badge",
+      "x": 968,
+      "y": 620,
+      "width": 362,
+      "height": 60,
+      "properties": {
+        "text": "Ministry Calling Discovered",
+        "background": "linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2))",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.2)"
+        },
+        "borderRadius": 8,
+        "textAlign": "center",
+        "fontSize": 12,
+        "fontWeight": 500,
+        "color": "#ffffff"
+      }
+    },
+    {
+      "id": "action-buttons",
+      "type": "button-group",
+      "x": 720,
+      "y": 750,
+      "width": 480,
+      "height": 60,
+      "properties": {
+        "display": "flex",
+        "justifyContent": "center",
+        "gap": 16
+      }
+    },
+    {
+      "id": "complete-chapter-btn",
+      "type": "action-button",
+      "x": 800,
+      "y": 750,
+      "width": 200,
+      "height": 60,
+      "properties": {
+        "text": "Complete Chapter",
+        "icon": "⭐",
+        "background": "#10b981",
+        "color": "#ffffff",
+        "border": "none",
+        "borderRadius": 8,
+        "fontSize": 16,
+        "fontWeight": 600,
+        "hoverEffect": "brighten"
+      }
+    },
+    {
+      "id": "next-chapter-btn",
+      "type": "action-button",
+      "x": 1020,
+      "y": 750,
+      "width": 200,
+      "height": 60,
+      "properties": {
+        "text": "Next Chapter",
+        "icon": "→",
+        "background": "transparent",
+        "color": "#ffffff",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.3)"
+        },
+        "borderRadius": 8,
+        "fontSize": 16,
+        "fontWeight": 600,
+        "hoverEffect": "highlight"
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "trigger": "click",
+      "target": "chapter-*",
+      "action": "selectChapter",
+      "properties": {
+        "condition": "unlocked",
+        "updateState": ["currentChapter"],
+        "animation": "fadeTransition"
+      }
+    },
+    {
+      "trigger": "click",
+      "target": "complete-chapter-btn",
+      "action": "completeChapter",
+      "properties": {
+        "updateState": ["completedChapters", "discoveredAchievements", "storyProgress"],
+        "unlockNext": true,
+        "animation": "celebrate"
+      }
+    },
+    {
+      "trigger": "hover",
+      "target": "chapter-*",
+      "action": "highlight",
+      "properties": {
+        "condition": "unlocked",
+        "hoverStyle": {
+          "transform": "scale(1.02)"
+        },
+        "transition": "smooth"
+      }
+    },
+    {
+      "trigger": "stateChange",
+      "target": "progress-bar",
+      "action": "updateProgress",
+      "properties": {
+        "watchState": "storyProgress",
+        "animation": "smooth"
+      }
+    },
+    {
+      "trigger": "stateChange",
+      "target": "achievement-counter",
+      "action": "updateCount",
+      "properties": {
+        "watchState": "discoveredAchievements",
+        "animation": "bounce"
+      }
+    }
+  ],
+  "animations": {
+    "fadeTransition": {
+      "keyframes": [
+        { "opacity": 0, "y": 20 },
+        { "opacity": 1, "y": 0 }
+      ],
+      "duration": 500,
+      "easing": "ease-out"
+    },
+    "celebrate": {
+      "keyframes": [
+        { "scale": 1 },
+        { "scale": 1.1, "rotate": 5 },
+        { "scale": 1, "rotate": 0 }
+      ],
+      "duration": 600,
+      "easing": "bounce"
+    },
+    "slideInRight": {
+      "keyframes": [
+        { "x": 100, "opacity": 0 },
+        { "x": 0, "opacity": 1 }
+      ],
+      "duration": 400,
+      "easing": "ease-out"
+    },
+    "bounce": {
+      "keyframes": [
+        { "scale": 1 },
+        { "scale": 1.2 },
+        { "scale": 1 }
+      ],
+      "duration": 300,
+      "easing": "bounce"
+    }
+  },
+  "gameLogic": {
+    "chapters": {
+      "start": {
+        "nextChapters": ["youth-ministry", "education"],
+        "achievements": ["First Leadership Role", "Ministry Calling Discovered"],
+        "keyMetric": { "value": "2004", "label": "Ministry Journey Began" }
+      },
+      "youth-ministry": {
+        "nextChapters": ["associate-pastor", "coaching-discovery"],
+        "achievements": ["Youth Ministry Certification", "Mentorship Program Launch", "50+ Youth Discipled"],
+        "keyMetric": { "value": "150%", "label": "Youth Group Growth" }
+      },
+      "education": {
+        "nextChapters": ["associate-pastor"],
+        "achievements": ["Bachelor's Degree Completed", "Biblical Languages", "Theology Mastery"],
+        "keyMetric": { "value": "3.8", "label": "GPA Achievement" }
+      }
+    },
+    "progressCalculation": "completedChapters / totalChapters * 100",
+    "unlockConditions": {
+      "sequential": false,
+      "multiPath": true
+    }
+  },
+  "responsive": {
+    "breakpoints": {
+      "mobile": 768,
+      "tablet": 1024
+    },
+    "layouts": {
+      "mobile": {
+        "canvas": { "width": 375, "height": 1200 },
+        "components": {
+          "story-map-sidebar": { "width": 375, "height": 300 },
+          "main-content-area": { "x": 0, "y": 380, "width": 375 }
+        }
+      }
+    }
+  }
+}

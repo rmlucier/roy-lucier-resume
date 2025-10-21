@@ -1,0 +1,281 @@
+{
+  "version": "1.0",
+  "type": "superdesign",
+  "metadata": {
+    "name": "Ambient Intelligence Portfolio",
+    "description": "Subtle, breathing interface with context-aware elements",
+    "author": "Claude Code",
+    "created": "2025-01-08T12:00:00Z",
+    "tags": ["ambient", "adaptive", "elegant", "portfolio"]
+  },
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "backgroundColor": "#f8fafc",
+    "backgroundGradient": {
+      "type": "linear",
+      "angle": 135,
+      "stops": [
+        { "offset": 0, "color": "#f8fafc" },
+        { "offset": 50, "color": "#e2e8f0" },
+        { "offset": 100, "color": "#cbd5e1" }
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "name": "Background Particles",
+      "type": "particle-system",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900,
+      "properties": {
+        "particleCount": 20,
+        "particleColor": "#3b82f6",
+        "particleOpacity": 0.4,
+        "animationType": "float",
+        "speed": "slow"
+      }
+    },
+    {
+      "id": "mouseGlow",
+      "name": "Mouse Follower Glow",
+      "type": "interactive-glow",
+      "x": 720,
+      "y": 450,
+      "width": 400,
+      "height": 400,
+      "properties": {
+        "color": "#3b82f6",
+        "opacity": 0.1,
+        "blur": 80,
+        "followMouse": true
+      }
+    },
+    {
+      "id": "avatar",
+      "name": "Central Avatar",
+      "type": "image",
+      "x": 656,
+      "y": 350,
+      "width": 128,
+      "height": 128,
+      "properties": {
+        "src": "/roy-avatar.jpg",
+        "fallback": "RL",
+        "borderRadius": "50%",
+        "border": {
+          "width": 4,
+          "color": "#3b82f6",
+          "opacity": 0.5
+        },
+        "shadow": {
+          "color": "#3b82f6",
+          "blur": 40,
+          "opacity": 0.3
+        },
+        "animation": {
+          "type": "breathing",
+          "duration": 4000,
+          "easing": "ease-in-out"
+        }
+      }
+    },
+    {
+      "id": "title",
+      "name": "Main Title",
+      "type": "text",
+      "x": 720,
+      "y": 500,
+      "properties": {
+        "text": "Roy M. Lucier",
+        "fontSize": 48,
+        "fontWeight": 300,
+        "color": "#1e293b",
+        "textAlign": "center",
+        "letterSpacing": "0.025em",
+        "fontFamily": "system-ui"
+      }
+    },
+    {
+      "id": "subtitle",
+      "name": "Subtitle",
+      "type": "text",
+      "x": 720,
+      "y": 540,
+      "properties": {
+        "text": "Executive Ministry Leader",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "color": "#64748b",
+        "textAlign": "center"
+      }
+    },
+    {
+      "id": "greetingCard",
+      "name": "Greeting Card",
+      "type": "card",
+      "x": 520,
+      "y": 580,
+      "width": 400,
+      "height": 120,
+      "properties": {
+        "backgroundColor": "rgba(255,255,255,0.6)",
+        "backdropFilter": "blur(12px)",
+        "border": {
+          "width": 1,
+          "color": "rgba(255,255,255,0.5)"
+        },
+        "borderRadius": 12,
+        "shadow": "0 4px 6px -1px rgb(0 0 0 / 0.1)"
+      }
+    },
+    {
+      "id": "greeting",
+      "name": "Dynamic Greeting",
+      "type": "dynamic-text",
+      "x": 720,
+      "y": 630,
+      "properties": {
+        "text": "Good morning! Welcome to Roy's world.",
+        "fontSize": 18,
+        "color": "#475569",
+        "textAlign": "center",
+        "adaptive": {
+          "timeOfDay": true,
+          "visitCount": true
+        }
+      }
+    },
+    {
+      "id": "floatingNav1",
+      "name": "Ministry Navigation",
+      "type": "floating-button",
+      "x": 288,
+      "y": 270,
+      "width": 80,
+      "height": 80,
+      "properties": {
+        "icon": "⛪",
+        "label": "Ministry",
+        "color": "#3b82f6",
+        "proximityReveal": true,
+        "animation": "float"
+      }
+    },
+    {
+      "id": "floatingNav2",
+      "name": "Leadership Navigation",
+      "type": "floating-button",
+      "x": 1152,
+      "y": 180,
+      "width": 80,
+      "height": 80,
+      "properties": {
+        "icon": "👥",
+        "label": "Leadership",
+        "color": "#10b981",
+        "proximityReveal": true,
+        "animation": "float"
+      }
+    },
+    {
+      "id": "floatingNav3",
+      "name": "Innovation Navigation",
+      "type": "floating-button",
+      "x": 216,
+      "y": 630,
+      "width": 80,
+      "height": 80,
+      "properties": {
+        "icon": "💡",
+        "label": "Innovation",
+        "color": "#f59e0b",
+        "proximityReveal": true,
+        "animation": "float"
+      }
+    },
+    {
+      "id": "floatingNav4",
+      "name": "Coaching Navigation",
+      "type": "floating-button",
+      "x": 1080,
+      "y": 675,
+      "width": 80,
+      "height": 80,
+      "properties": {
+        "icon": "🎯",
+        "label": "Coaching",
+        "color": "#8b5cf6",
+        "proximityReveal": true,
+        "animation": "float"
+      }
+    },
+    {
+      "id": "statusBadge",
+      "name": "Status Indicator",
+      "type": "badge",
+      "x": 1280,
+      "y": 804,
+      "width": 140,
+      "height": 40,
+      "properties": {
+        "text": "Available for opportunities",
+        "backgroundColor": "rgba(255,255,255,0.8)",
+        "color": "#10b981",
+        "backdropFilter": "blur(12px)",
+        "borderRadius": 20,
+        "pulse": true
+      }
+    },
+    {
+      "id": "ctaButtons",
+      "name": "Call to Action Buttons",
+      "type": "button-group",
+      "x": 720,
+      "y": 750,
+      "properties": {
+        "buttons": [
+          {
+            "text": "View Portfolio",
+            "variant": "outline",
+            "backgroundColor": "rgba(255,255,255,0.8)",
+            "color": "#475569"
+          },
+          {
+            "text": "Explore Experience",
+            "variant": "primary",
+            "backgroundColor": "rgba(59,130,246,0.9)",
+            "color": "#ffffff"
+          }
+        ]
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "trigger": "mousemove",
+      "target": "mouseGlow",
+      "action": "follow",
+      "smooth": true
+    },
+    {
+      "trigger": "hover",
+      "target": "floatingNav*",
+      "action": "revealLabel",
+      "animation": "fadeUp"
+    },
+    {
+      "trigger": "timechange",
+      "target": "greeting",
+      "action": "updateText",
+      "conditions": {
+        "morning": "Good morning! Welcome to Roy's world.",
+        "afternoon": "Good afternoon! Great to meet you.",
+        "evening": "Good evening! Thanks for stopping by."
+      }
+    }
+  ]
+}
