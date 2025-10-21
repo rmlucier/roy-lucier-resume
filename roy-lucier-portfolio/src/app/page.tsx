@@ -2,42 +2,19 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
 import FluidCard from "@/components/interactive/FluidCard";
 import detailedContent from "@/data/detailed-content.json";
 
 export default function Home() {
   const [expandedCard, setExpandedCard] = useState<string>('');
-  const [hoveredMetric, setHoveredMetric] = useState<string>('');
 
   const handleCardExpand = (cardId: string) => {
     setExpandedCard(cardId === expandedCard ? '' : cardId);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100
-      }
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 p-4">

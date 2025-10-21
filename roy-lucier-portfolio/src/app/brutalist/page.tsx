@@ -2,13 +2,12 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import { ArrowRight, Square, Circle, Triangle } from "lucide-react";
 
 export default function BrutalistDesign() {
-  const [activeSection, setActiveSection] = useState<string>('');
   const [clickedMetric, setClickedMetric] = useState<string>('');
 
   const metrics = [
@@ -78,7 +77,7 @@ export default function BrutalistDesign() {
           </h2>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {metrics.map((metric, index) => (
+            {metrics.map((metric) => (
               <motion.div
                 key={metric.id}
                 className={`border-4 border-black p-6 cursor-pointer transition-colors ${
@@ -220,10 +219,10 @@ export default function BrutalistDesign() {
               className="bg-yellow-400 text-black font-black text-lg py-6 border-4 border-yellow-400 hover:bg-yellow-500 transition-colors"
               asChild
             >
-              <a href="/" className="flex items-center justify-center space-x-2">
+              <Link href="/" className="flex items-center justify-center space-x-2">
                 <span>FULL PORTFOLIO</span>
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </Link>
             </Button>
           </div>
 

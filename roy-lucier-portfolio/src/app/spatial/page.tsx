@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion, useTransform, useScroll, useSpring } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -15,7 +15,6 @@ import {
   Target,
   Phone,
   Mail,
-  MapPin,
   Calendar,
   Star,
   Layers,
@@ -31,14 +30,13 @@ interface FloatingNode {
   position: { x: number; y: number; z: number };
   category: 'personal' | 'experience' | 'skills' | 'contact' | 'achievements';
   connections: string[];
-  data?: any;
+  data?: Record<string, any>;
 }
 
 export default function SpatialDesign() {
   const [activeNode, setActiveNode] = useState<string>('center');
   const [hoveredNode, setHoveredNode] = useState<string>('');
   const [viewMode, setViewMode] = useState<'explore' | 'timeline' | 'network'>('explore');
-  const [cameraPosition, setCameraPosition] = useState({ x: 0, y: 0, zoom: 1 });
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({ target: containerRef });
   

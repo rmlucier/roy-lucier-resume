@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -254,7 +255,7 @@ export default function AmbientDesign() {
                 className="bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 backdrop-blur-sm border-slate-200/50 dark:border-slate-700/50"
                 asChild
               >
-                <a href="/">View Portfolio</a>
+<Link href="/">View Portfolio</Link>
               </Button>
               <Button 
                 className="bg-blue-500/90 hover:bg-blue-600 text-white backdrop-blur-sm"
