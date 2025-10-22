@@ -657,21 +657,21 @@
             color: #1a1a1a;
         }
 
-        /* Welcome Splash Screen */
+        /* Welcome Splash Screen - Elegant & Classy */
         #welcome-splash {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            background: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             z-index: 9999;
             opacity: 1;
-            transition: opacity 0.8s ease;
+            transition: opacity 1s ease;
         }
 
         #welcome-splash.fade-out {
@@ -681,54 +681,34 @@
 
         .welcome-content {
             text-align: center;
-            color: white;
-            animation: fadeInUp 1s ease;
+            color: #1a1a1a;
         }
 
-        .welcome-greeting {
+        .welcome-text {
             font-family: 'Railway', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease 0.2s both;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            animation: fadeIn 1.2s ease both;
         }
 
         .welcome-name {
             font-family: 'Railway', sans-serif;
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease 0.4s both;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: 1rem;
+            color: #f97316;
+            animation: fadeIn 1.2s ease 0.3s both;
         }
 
-        .welcome-tagline {
-            font-family: 'Lato', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-
-        .welcome-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite, fadeIn 1s ease 0.8s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .welcome-line {
+            width: 60px;
+            height: 2px;
+            background: #f97316;
+            margin: 2rem auto;
+            animation: expandWidth 1s ease 0.6s both;
         }
 
         @keyframes fadeIn {
@@ -740,9 +720,12 @@
             }
         }
 
-        @keyframes spin {
+        @keyframes expandWidth {
+            from {
+                width: 0;
+            }
             to {
-                transform: rotate(360deg);
+                width: 60px;
             }
         }
 
@@ -753,18 +736,15 @@
 
         body.loaded .main-container {
             opacity: 1;
-            animation: fadeIn 0.8s ease;
+            animation: fadeIn 1s ease;
         }
 
         @media (max-width: 768px) {
-            .welcome-greeting {
-                font-size: 1.8rem;
+            .welcome-text {
+                font-size: 1.5rem;
             }
             .welcome-name {
-                font-size: 2.5rem;
-            }
-            .welcome-tagline {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -773,10 +753,9 @@
     <!-- Welcome Splash Screen -->
     <div id="welcome-splash">
         <div class="welcome-content">
-            <div class="welcome-greeting">Hi, I'm</div>
-            <div class="welcome-name">Roy</div>
-            <div class="welcome-tagline">Welcome to my online resume</div>
-            <div class="welcome-spinner"></div>
+            <div class="welcome-text">Welcome</div>
+            <div class="welcome-name">Roy M. Lucier</div>
+            <div class="welcome-line"></div>
         </div>
     </div>
 
@@ -1510,7 +1489,7 @@
             const splash = document.getElementById('welcome-splash');
             const body = document.body;
 
-            // Hide splash screen after 3 seconds
+            // Hide splash screen after 2.5 seconds
             setTimeout(function() {
                 splash.classList.add('fade-out');
                 body.classList.remove('loading');
@@ -1519,8 +1498,8 @@
                 // Remove splash from DOM after animation completes
                 setTimeout(function() {
                     splash.style.display = 'none';
-                }, 800);
-            }, 3000);
+                }, 1000);
+            }, 2500);
         });
 
         // Initialize Lucide icons
