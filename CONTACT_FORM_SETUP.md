@@ -2,25 +2,27 @@
 
 Your contact form is ready! To make it work, you need to get a free Web3Forms API key.
 
-## Step 1: Get Your Web3Forms Access Key
+## Step 1: Get Your Web3Forms Access Key (100% FREE)
 
 1. Go to https://web3forms.com/
 2. Click "Get Started Free"
-3. Enter your email (rmlucier@gmail.com)
-4. They'll send you an access key to your email
+3. Enter your email: **rmlucier@gmail.com**
+4. They'll send you an access key to your email immediately
 5. Copy the access key
+
+**Note:** This is completely free (250 submissions/month) with no credit card required!
 
 ## Step 2: Add the Access Key
 
 1. Open `index.html`
-2. Find line 1838 that says: `access_key: 'YOUR_WEB3FORMS_ACCESS_KEY'`
-3. Replace `YOUR_WEB3FORMS_ACCESS_KEY` with your actual key
+2. Find line 1325 that says: `value="YOUR_ACCESS_KEY_HERE"`
+3. Replace `YOUR_ACCESS_KEY_HERE` with your actual key
 4. Save the file
 5. Commit and push to deploy
 
 Example:
-```javascript
-access_key: 'abc123-your-actual-key-here',
+```html
+<input type="hidden" name="access_key" value="abc123-your-actual-key-here">
 ```
 
 ## Step 3: Update reCAPTCHA (Optional but Recommended)

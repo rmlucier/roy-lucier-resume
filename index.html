@@ -1320,7 +1320,17 @@
                 <h2 class="subtitle text-center mb-4">Send Me a Message</h2>
                 <p class="text-center text-gray-600 mb-8">Have a question or want to discuss a potential partnership? Fill out the form below and I'll get back to you soon.</p>
 
-                <form id="contact-form" class="space-y-6">
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="space-y-6">
+                    <!-- Web3Forms Access Key - Replace with your key from web3forms.com -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+                    <!-- Email destination -->
+                    <input type="hidden" name="from_name" value="Roy Lucier Resume Contact Form">
+                    <input type="hidden" name="redirect" value="https://roy-lucier-resume.vercel.app/?success=true">
+
+                    <!-- Botcheck for basic spam protection -->
+                    <input type="checkbox" name="botcheck" style="display: none;">
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name *</label>
@@ -1352,7 +1362,7 @@
 
                     <!-- Google reCAPTCHA -->
                     <div class="flex justify-center">
-                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" name="g-recaptcha-response"></div>
                     </div>
 
                     <div id="form-message" class="hidden p-4 rounded-lg text-center"></div>
@@ -1799,81 +1809,41 @@
         });
 
         // Contact Form Handler
-        document.getElementById('contact-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const submitBtn = document.getElementById('submit-btn');
-            const formMessage = document.getElementById('form-message');
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
             const recaptchaResponse = grecaptcha.getResponse();
 
             // Validate reCAPTCHA
             if (!recaptchaResponse) {
-                showMessage('Please complete the reCAPTCHA verification.', 'error');
-                return;
+                e.preventDefault();
+                alert('Please complete the reCAPTCHA verification.');
+                return false;
             }
 
-            // Disable submit button
+            const submitBtn = document.getElementById('submit-btn');
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i data-lucide="loader" class="w-5 h-5 mr-2 animate-spin"></i>Sending...';
             lucide.createIcons();
 
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
-                'g-recaptcha-response': recaptchaResponse
-            };
-
-            try {
-                // Use Web3Forms service
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // Replace with actual key
-                        name: formData.name,
-                        email: formData.email,
-                        subject: formData.subject,
-                        message: formData.message,
-                        to: 'rmlucier@gmail.com'
-                    })
-                });
-
-                const result = await response.json();
-
-                if (result.success) {
-                    showMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon.', 'success');
-                    document.getElementById('contact-form').reset();
-                    grecaptcha.reset();
-                } else {
-                    showMessage('Oops! Something went wrong. Please try again or email me directly.', 'error');
-                }
-            } catch (error) {
-                console.error('Form submission error:', error);
-                showMessage('Oops! Something went wrong. Please try again or email me directly at rmlucier@gmail.com.', 'error');
-            } finally {
-                // Re-enable submit button
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i data-lucide="send" class="w-5 h-5 mr-2"></i>Send Message';
-                lucide.createIcons();
-            }
+            // Form will submit normally to Web3Forms
+            return true;
         });
 
-        function showMessage(message, type) {
+        // Show success message if redirected back with success parameter
+        if (window.location.search.includes('success=true')) {
             const formMessage = document.getElementById('form-message');
-            formMessage.textContent = message;
-            formMessage.className = `p-4 rounded-lg text-center ${type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`;
-            formMessage.classList.remove('hidden');
+            if (formMessage) {
+                formMessage.textContent = 'Thank you! Your message has been sent successfully. I\'ll get back to you soon.';
+                formMessage.className = 'p-4 rounded-lg text-center bg-green-100 text-green-800';
+                formMessage.classList.remove('hidden');
 
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.classList.add('hidden');
-            }, 5000);
+                // Scroll to form
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Clean URL after showing message
+                setTimeout(() => {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }, 3000);
+            }
         }
     </script>
 </body>
