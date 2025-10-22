@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roy M. Lucier - Executive Partner</title>
 
+    <!-- Security Meta Tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Roy M. Lucier - Executive Partner with 16+ years of experience in operations, strategic planning, and executive support. ICF-certified coach specializing in leadership development.">
+    <meta name="keywords" content="executive assistant, executive partner, operations, strategic planning, leadership coaching, ICF certified coach">
+    <meta name="author" content="Roy M. Lucier">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Railway:wght@400;700;800&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
@@ -498,18 +507,128 @@
         }
 
         .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+            animation: fadeIn 0.8s ease-out forwards;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Staggered animation for list items */
+        .animate-item {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Card hover animations */
+        .card, .card-minimal, .exp-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover, .card-minimal:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Smooth scale on hover for contact items */
+        .contact-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        /* Button animations */
+        .btn-primary, .btn-outline {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary::before, .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover::before, .btn-outline:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Smooth counter animation */
+        .metric-large {
+            transition: all 0.3s ease;
+        }
+
+        /* Story block enhanced animations */
+        .story-block {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .story-block:hover:not(.expanded) {
+            transform: translateY(-6px) scale(1.01);
+        }
+
+        /* Icon animations */
+        [data-lucide] {
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover [data-lucide] {
+            transform: scale(1.15);
+        }
+
+        /* Smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Loading animation for sections */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -531,16 +650,16 @@
 
             <!-- Contact Information Grid -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
-                <div class="contact-item" onclick="window.open('mailto:rmlucier@gmail.com')">
+                <div class="contact-item" id="email-contact" data-contact-type="email" data-user="cmx1dWNpZXI=" data-domain="Z21haWwuY29t">
                     <i data-lucide="mail" class="w-5 h-5 icon-gray mx-auto mb-2"></i>
                     <p class="heading-3 mb-1">EMAIL</p>
-                    <p class="heading-2">rmlucier@gmail.com</p>
+                    <p class="heading-2" id="email-display">Contact via Email</p>
                 </div>
 
-                <div class="contact-item" onclick="window.open('tel:3138205831')">
+                <div class="contact-item" id="phone-contact" data-contact-type="phone" data-phone="MzEzLjgyMC41ODMx">
                     <i data-lucide="phone" class="w-5 h-5 icon-gray mx-auto mb-2"></i>
                     <p class="heading-3 mb-1">PHONE</p>
-                    <p class="heading-2">313.820.5831</p>
+                    <p class="heading-2" id="phone-display">Contact via Phone</p>
                 </div>
 
                 <div class="contact-item">
@@ -549,7 +668,7 @@
                     <p class="heading-2">Albion, MI</p>
                 </div>
 
-                <div class="contact-item" onclick="window.open('https://www.linkedin.com/in/roymlucier', '_blank')">
+                <div class="contact-item" data-contact-type="linkedin" data-url="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3JveW1sdWNpZXI=">
                     <i data-lucide="linkedin" class="w-5 h-5 icon-gray mx-auto mb-2"></i>
                     <p class="heading-3 mb-1">LINKEDIN</p>
                     <p class="heading-2">/in/roymlucier</p>
@@ -578,8 +697,8 @@
                     <div class="metric-label">Executive Support</div>
                 </div>
                 <div class="text-center">
-                    <div class="metric-large" data-counter="800">0</div>
-                    <div class="metric-label">Team Members</div>
+                    <div class="metric-large" data-counter="150">0</div>
+                    <div class="metric-label">Coaching Hours</div>
                 </div>
                 <div class="text-center">
                     <div class="metric-large" data-counter="4">0</div>
@@ -681,7 +800,7 @@
                 Real examples of how I've multiplied executive effectiveness and transformed organizational outcomes
             </p>
 
-            <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <!-- Story Block 1 -->
                 <div class="story-block" onclick="toggleStory('story1')" id="story1">
                     <div class="story-header">
@@ -1146,17 +1265,17 @@
             <p class="text-xl mb-8 text-white opacity-90">Let's discuss how I can serve as your strategic operational partner.</p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onclick="window.open('mailto:rmlucier@gmail.com?subject=Executive Partner Opportunity', '_blank')" class="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                <button id="cta-email" data-contact-type="email" data-user="cmx1dWNpZXI=" data-domain="Z21haWwuY29t" data-subject="Executive Partner Opportunity" class="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors">
                     <i data-lucide="mail" class="w-5 h-5 inline mr-2"></i>
                     Contact Me
                 </button>
 
-                <button onclick="window.open('https://www.linkedin.com/in/roymlucier', '_blank')" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-orange-600 transition-colors">
+                <button id="cta-linkedin" data-contact-type="linkedin" data-url="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3JveW1sdWNpZXI=" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-orange-600 transition-colors">
                     <i data-lucide="linkedin" class="w-5 h-5 inline mr-2"></i>
                     View LinkedIn
                 </button>
 
-                <button onclick="window.open('tel:3138205831')" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-orange-600 transition-colors">
+                <button id="cta-phone" data-contact-type="phone" data-phone="MzEzLjgyMC41ODMx" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-orange-600 transition-colors">
                     <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>
                     Call Now
                 </button>
@@ -1446,10 +1565,23 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Add visible class for section animations
+                    entry.target.classList.add('visible');
+
+                    // Trigger counter animation for summary section
                     if (entry.target.id === 'summary') {
                         animateCounters();
                     }
+
                     entry.target.classList.add('fade-in');
+
+                    // Stagger animate list items within the section
+                    const items = entry.target.querySelectorAll('li');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('animate-item');
+                        }, index * 100);
+                    });
                 }
             });
         }, observerOptions);
@@ -1462,6 +1594,119 @@
 
             // Initialize charts
             initializeCharts();
+
+            // Initialize secure contact handlers
+            initializeSecureContacts();
+        });
+
+        // Security: Contact Information Protection & Rate Limiting
+        const contactRateLimiter = {
+            attempts: {},
+            maxAttempts: 5,
+            timeWindow: 60000, // 1 minute
+
+            canProceed: function(type) {
+                const now = Date.now();
+                if (!this.attempts[type]) {
+                    this.attempts[type] = [];
+                }
+
+                // Remove old attempts outside time window
+                this.attempts[type] = this.attempts[type].filter(time => now - time < this.timeWindow);
+
+                // Check if under limit
+                if (this.attempts[type].length >= this.maxAttempts) {
+                    return false;
+                }
+
+                // Record this attempt
+                this.attempts[type].push(now);
+                return true;
+            }
+        };
+
+        function initializeSecureContacts() {
+            // Decode and display contact information
+            decodeContactInfo();
+
+            // Add click handlers to all contact elements
+            const contactElements = document.querySelectorAll('[data-contact-type]');
+            contactElements.forEach(element => {
+                element.addEventListener('click', handleSecureContact);
+                element.style.cursor = 'pointer';
+            });
+        }
+
+        function decodeContactInfo() {
+            // Decode email
+            const emailDisplay = document.getElementById('email-display');
+            const emailContact = document.getElementById('email-contact');
+            if (emailDisplay && emailContact) {
+                const user = atob(emailContact.dataset.user);
+                const domain = atob(emailContact.dataset.domain);
+                emailDisplay.textContent = user + '@' + domain;
+            }
+
+            // Decode phone
+            const phoneDisplay = document.getElementById('phone-display');
+            const phoneContact = document.getElementById('phone-contact');
+            if (phoneDisplay && phoneContact) {
+                const phone = atob(phoneContact.dataset.phone);
+                phoneDisplay.textContent = phone;
+            }
+        }
+
+        function handleSecureContact(event) {
+            event.preventDefault();
+            const element = event.currentTarget;
+            const type = element.dataset.contactType;
+
+            // Rate limiting check
+            if (!contactRateLimiter.canProceed(type)) {
+                alert('Too many contact attempts. Please wait a moment before trying again.');
+                return;
+            }
+
+            // Handle different contact types
+            try {
+                switch(type) {
+                    case 'email':
+                        const user = atob(element.dataset.user);
+                        const domain = atob(element.dataset.domain);
+                        const subject = element.dataset.subject || '';
+                        const mailtoUrl = 'mailto:' + user + '@' + domain + (subject ? '?subject=' + encodeURIComponent(subject) : '');
+                        window.location.href = mailtoUrl;
+                        break;
+
+                    case 'phone':
+                        const phone = atob(element.dataset.phone).replace(/\./g, '');
+                        window.location.href = 'tel:' + phone;
+                        break;
+
+                    case 'linkedin':
+                        const url = atob(element.dataset.url);
+                        window.open(url, '_blank', 'noopener,noreferrer');
+                        break;
+
+                    default:
+                        console.warn('Unknown contact type:', type);
+                }
+            } catch (error) {
+                console.error('Error handling contact:', error);
+                alert('Unable to process contact request. Please try again.');
+            }
+        }
+
+        // Security: Prevent iframe embedding (additional JS protection)
+        if (window.top !== window.self) {
+            window.top.location = window.self.location;
+        }
+
+        // Security: Disable right-click context menu on contact info (optional - can be removed if too restrictive)
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.closest('[data-contact-type]')) {
+                // Allow context menu for better UX, but contact info is already protected via obfuscation
+            }
         });
     </script>
 </body>
