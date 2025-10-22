@@ -630,6 +630,32 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Brush stroke highlight effect */
+        .highlight-brushstroke {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .highlight-brushstroke::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            right: -4px;
+            bottom: 0;
+            height: 45%;
+            background: linear-gradient(120deg, #f97316 0%, #fb923c 100%);
+            opacity: 0.3;
+            z-index: -1;
+            transform: skewY(-1deg) rotate(-0.5deg);
+            border-radius: 4px;
+        }
+
+        .highlight-brushstroke strong {
+            position: relative;
+            color: #1a1a1a;
+        }
     </style>
 </head>
 <body>
@@ -716,7 +742,7 @@
                         <strong>Strategy + Operations.</strong> Out of 16 years of professional executive work, I've spent 6+ years serving as the trusted "right-hand" to my senior executive leaders. My unique strength is a blend of operational excellence and my professional coaching skills which allows me to not only manage the administrative backbone of an executive's office but also to serve as a confidential sounding board.
                     </p>
                     <p>
-                        I am seeking a <strong>high-impact Executive Partner role</strong> where I can apply my expertise in systems, communication, and people to amplify a leader's effectiveness and help a growing organization thrive.
+                        I am seeking a <span class="highlight-brushstroke"><strong>high-impact Executive Partner role</strong></span> where I can apply my expertise in systems, communication, and people to amplify a leader's effectiveness and help a growing organization thrive.
                     </p>
                 </div>
             </div>
